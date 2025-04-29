@@ -1,18 +1,14 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Test from './component/Test'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Shop from "./component/Shop/Shop";
+
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-
-    <Router className="">
+    <Router>
       <Routes>
-        <Route path="/" element={<Test />} />
+        <Route path="/" element={<Shop />} />
       </Routes>
     </Router>
-
-  )
+  );
 }
 
-export default App
+export default App;

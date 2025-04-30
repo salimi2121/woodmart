@@ -3,12 +3,22 @@
 }
 
 @media screen and (min-width: 1025px) {
-    
+    .d-1025-block {
+        display: block !important;
+    }
+
+    .d-1025-none {
+        display: none !important;
+    }
 }
 
 .shop {
     background-color: #fff;
     direction: rtl;
+}
+
+.bg-orange {
+    background: var(--orange);
 }
 
 .pointer {
@@ -27,6 +37,14 @@ ul {
     list-style-type: none;
 }
 
-.socialmedia-nav {
-    background: var(--orange);
+.woodmart-logo {
+    max-width: 138px;
+}
+
+.count {
+    font-size: 8px;
+}
+
+.petshop-logo {
+    max-width: 210px;
 }

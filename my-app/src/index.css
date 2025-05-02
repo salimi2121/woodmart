@@ -48,3 +48,20 @@ ul {
 .petshop-logo {
     max-width: 210px;
 }
+
+input:focus {
+    outline: 0;
+}
+
+.select-category {
+    font-size: 15px;
+}
+
+.search-box {
+    min-width: 300px;
+    width: 670px;
+}
+
+.w-68 {
+    width: 68%;
+}

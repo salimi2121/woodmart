@@ -11,9 +11,9 @@ export default function SocialMedia() {
         {icon: faTelegram, href: "https://telegram.me/share/url?url=https://demoes.aramis-co.ir/petshop/shop/"},
     ])
     return (
-        <div>
+        <div className="social-media">
             {socialMedia.current.map((item, i) => (
-                <a href={item.href} key={i} className="text-white mx-2">
+                <a href={item.href} key={i} className="social-media-link mx-2">
                     <FontAwesomeIcon icon={item.icon} />
                 </a>
             ))}

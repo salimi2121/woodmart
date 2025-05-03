@@ -7,11 +7,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import SearchBox from "./SearchBox";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import Navbar from "./Navbar";
 
 export default function Header() {
   return (
     <header>
-      <div className="mx-xl-5 d-flex justify-content-around align-items-center py-3 px-2">
+      <div className="mx-2 mx-xl-4 d-flex justify-content-between align-items-center py-3 px-2">
         <BurgerMenu />
         <Link to="/">
           <img
@@ -26,27 +27,28 @@ export default function Header() {
           />
         </Link>
         <SearchBox />
-        <div className="pointer">ورود / ثبت نام</div>
-        <div className="pointer">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        <div className="pointer header-item d-none d-1025-block">ورود / ثبت نام</div>
+        <div className="pointer header-item d-none d-1025-block">
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="header-icon" />
         </div>
-        <div className="pointer position-relative">
-          <FontAwesomeIcon icon={faHeart} className="ms-1 mt-1" />
+        <div className="pointer position-relative header-item d-none d-1025-block">
+          <FontAwesomeIcon icon={faHeart} className="header-icon ms-2 mt-1" />
           <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
             0
           </span>
         </div>
-        <div className="pointer d-flex justify-content-between align-items-center">
+        <div className="pointer d-flex justify-content-between align-items-center header-item">
           <div className="position-relative ms-3">
-            <FontAwesomeIcon icon={faCartShopping} className="ms-1 mt-2" />
+            <FontAwesomeIcon icon={faCartShopping} className="header-icon ms-2 mt-2" />
             <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
               0
             </span>
           </div>
-          <span>0 تومان</span>
+          <span className="d-none d-1025-block">0 تومان</span>
         </div>
       </div>
-      <hr className="my-1" />
+      <hr className="mt-1 mb-0" />
+      <Navbar />
     </header>
   );
 }

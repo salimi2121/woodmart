@@ -1,4 +1,5 @@
 import Header from "./Header/Header";
+import Main from "./MainSection/MainSection";
 import SocialMedia from "./SocialMedia";
 
 export default function Shop() {
@@ -8,6 +9,7 @@ export default function Shop() {
         <SocialMedia />
       </div>
       <Header />
+      <Main />
     </div>
   );
 }

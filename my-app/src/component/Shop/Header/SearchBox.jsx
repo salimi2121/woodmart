@@ -1,7 +1,17 @@
 import { faAngleDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 export default function SearchBox() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  // const [searchedItems, setSearchedItems] = useState(null);
+
+  function searchItems() {
+    console.log("Searching...");
+  }
+
   return (
     <div className="d-none d-1025-block">
       <div className="search-box text-secondary border border-2 rounded-5 px-2 d-flex justify-content-center align-items-center">
@@ -9,12 +19,22 @@ export default function SearchBox() {
           type="text"
           className="border-0 mt-1 mb-2 text-secondary ms-auto"
           placeholder="جستجوی محصولات"
+          onChange={searchItems}
         />
-        <div className="select-category">
-          <div className="pointer px-2 ms-2 border border-top-0 border-bottom-0 py-2 d-flex justify-content-between align-items-center">
+        <div className="select-category position-relative">
+          <div className="pointer px-2 ms-2 border border-top-0 border-bottom-0 py-2 d-flex justify-content-between align-items-center" onClick={() => setIsOpen((prev) => !prev)}>
             <span>انتخاب دسته بندی</span>
             <FontAwesomeIcon icon={faAngleDown} />
           </div>
+          {isOpen && (
+            <div className="select-category-menu bg-white position-absolute w-100 z-2">
+              <ul className="pt-2 mx-3">
+                <li className="pointer text-end py-2">غذای گربه</li>
+                <li className="pointer text-end py-2">غذای ماهی</li>
+              </ul>
+            </div>
+          )
+          }
         </div>
         <FontAwesomeIcon icon={faMagnifyingGlass} className="pointer search-icon" />
       </div>

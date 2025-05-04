@@ -79,6 +79,11 @@ input:focus {
     width: 172px;
 }
 
+.select-category-menu {
+    border-radius: 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+
 .header-item {
     color: #333;
     transition: color .1s ease-in-out;
@@ -133,4 +138,10 @@ nav .social-media {
 .header-navbar {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
     min-height: 56px;
+}
+
+/* main */
+
+main {
+    background-color: rgb(255, 250, 238);
 }

@@ -29,12 +29,23 @@ a {
     transition: color .1s, background-color .1s, fill .1s;
     background-color: transparent;
 }
+
 .w-45 {
     width: 45%;
 }
-.w-15{
+
+.w-15 {
     width: 15rem;
 }
+
+.fs-11 {
+    font-size: 11px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
 /* header */
 .header-homepage {
     top: 10px;
@@ -83,6 +94,7 @@ a {
     color: #333;
     position: relative;
 }
+
 .nav-item-span::after {
     content: '';
     position: absolute;
@@ -90,9 +102,10 @@ a {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: rgba(237, 153, 81, 1) ;
-    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);  
+    background-color: rgba(237, 153, 81, 1);
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .h-menu a:hover .nav-item-span::after {
     width: 100% !important;
 }
@@ -104,20 +117,23 @@ a {
 .h-menu a:active {
     color: rgba(51, 51, 51, 0.7);
 }
+
 .home-link {
     color: rgba(51, 51, 51, 0.7) !important;
     position: relative;
 }
-.home-link::after{
+
+.home-link::after {
     content: '';
     position: absolute;
     top: 100%;
     right: 0;
     width: 100%;
     height: 2px;
-    background-color: rgba(237, 153, 81, 1) ;
+    background-color: rgba(237, 153, 81, 1);
     transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
 .h-sing-in {
     color: #333;
 }
@@ -130,13 +146,16 @@ a {
     color: rgba(237, 153, 81, 1);
     background-color: rgba(251, 235, 220, 1);
 }
-.text-orange{
+
+.text-orange {
     color: rgba(237, 153, 81, 1) !important;
 }
+
 .bg-orange {
     background-color: rgba(237, 153, 81, 1) !important;
 
 }
+
 .count-shopping {
     background-color: #fff;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
@@ -149,7 +168,7 @@ a {
 /* sidebar menu */
 .menu-toggle-btn {
     background: none;
-    border: 1px solid rgba(0,0,0,0.105);
+    border: 1px solid rgba(0, 0, 0, 0.105);
     padding: 8px;
     cursor: pointer;
     height: 42px;
@@ -181,7 +200,7 @@ a {
     background: none;
     border: none;
     cursor: pointer;
-    
+
 }
 
 .overlay {
@@ -199,6 +218,7 @@ a {
     display: flex;
     flex-direction: column;
 }
+
 .nav-search {
     padding-left: 50px;
     padding-right: 20px;
@@ -206,15 +226,17 @@ a {
     font-weight: 600;
     font-size: 15px;
     color: #767676 !important;
-    box-shadow: 0 5px 9px -5px rgba(0,0,0,0.17);
+    box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.17);
     border-top: 1px solid #eee;
 }
-.nav-search:focus {    
-    box-shadow: 0 5px 9px -5px rgba(0,0,0,0.17);
+
+.nav-search:focus {
+    box-shadow: 0 5px 9px -5px rgba(0, 0, 0, 0.17);
     border-top: 1px solid #eee;
     border-bottom: none;
     z-index: 0 !important;
 }
+
 .search-btn {
     top: 10px;
     left: 10px;
@@ -222,6 +244,7 @@ a {
     color: #717274;
     z-index: 17;
 }
+
 .nav-item {
     padding: 14px;
     border-bottom: 1px solid #eee;
@@ -235,6 +258,7 @@ a {
 .cart-icon {
     cursor: pointer;
 }
+
 .cart-box {
     position: fixed;
     top: 0;
@@ -256,19 +280,22 @@ a {
     padding: 16px;
     align-items: center;
     border-bottom: 1px solid #eee;
-    
+
 }
-.cart-box-header h1{
+
+.cart-box-header h1 {
     color: #646363 !important;
 
 }
+
 .cart-box-content h2 {
     font-size: 17px;
     font-weight: 600;
     color: #646363 !important;
 
 }
-.cart-box-content a{
+
+.cart-box-content a {
     padding: 5px 14px;
     min-height: 36px;
     font-size: 12px;
@@ -412,8 +439,9 @@ h1 {
     margin-top: -90px;
     padding-top: 10px;
     padding: 100px 0px 37px 0px;
-  }
-  .overlay-s2 {
+}
+
+.overlay-s2 {
     background-image: url(../../../assets/home-page/Reasons-to-buy/bg-s2.png);
     z-index: 10;
     background-position: center center;
@@ -422,8 +450,9 @@ h1 {
     opacity: 0.5;
     inset: 0;
     position: absolute;
-  }
-  .s2-box {
+}
+
+.s2-box {
     border-radius: 24px 24px 24px 24px;
     background-color: #FFFFFF1A;
     margin: 0px 0px 0px 0px;
@@ -432,7 +461,98 @@ h1 {
     margin-left: 65px;
     margin-right: 65px;
     margin-top: 80px;
-  }
-  .s2-item {
+}
+
+.s2-item {
     width: 33%;
-  }
+}
+
+/* food category section */
+
+.category-img {
+    width: 150px;
+    left: -10px;
+    top: -40px;
+}
+
+/* off pet */
+.off-pet-right {
+    width: 19.2%;
+    height: 330px;
+    background-image: url(../../../assets/home-page/off-pet/bg-r.jpg);
+}
+
+.off-pet-right h2 {
+    font-size: 44px;
+    font-weight: bolder;
+}
+
+.off-img1 {
+    bottom: -22px;
+    width: 8rem;
+}
+
+.off-pet-left {
+    width: 80.8%;
+}
+
+.swiper-item {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.off-buttons {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: all .3s ease;
+    left: 5px;
+    top: 30px;
+    z-index: 15;
+    visibility: hidden;
+}
+
+.swiper-item:hover .off-buttons {
+    opacity: 1 !important;
+    visibility: visible !important;
+    left: 25px !important;
+}
+
+.off-swiper-button-next,
+.off-swiper-button-prev {
+    opacity: 0;  
+    transition: all .25s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #273544;
+
+}
+
+.off-swiper-button-prev {
+    right: -50px;
+}
+
+.off-swiper-button-next {
+    left: -60px;
+}
+
+.off-pet-left:hover .off-swiper-button-prev{
+    opacity: 1 ;
+    right: -30px ;
+
+}
+.off-pet-left:hover .off-swiper-button-next {
+    opacity: 1;
+    left: -40px;
+
+}
+.btn-heart{
+    left: 20px;
+    top: 20px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.12);
+}

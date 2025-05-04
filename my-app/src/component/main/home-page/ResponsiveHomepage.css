@@ -36,9 +36,11 @@
         padding-left: 0;
         padding-right: 0;
     }
+
     .hero-items {
         min-height: 150vh !important;
     }
+
     .hero-img {
         width: 100%;
         order: 1;
@@ -77,6 +79,7 @@
     .hero-btn {
         flex-direction: column;
     }
+
     /* Reasons to buy section */
     .s2-div {
         height: auto;
@@ -91,11 +94,13 @@
         margin-right: 10px;
         height: auto;
     }
+
     .s2-box-item1 {
         flex-direction: column !important;
         width: 100% !important;
         align-items: start !important;
     }
+
     .s2-box-item1 p {
         width: 100%;
         margin-right: 0 !important;
@@ -108,11 +113,69 @@
     .s2-item {
         width: 100%;
     }
-    .s2-item-1{
+
+    .s2-item-1 {
         flex-direction: column !important;
         padding-top: 12px;
         padding-bottom: 12px;
     }
+
+    /* food category section */
+    .food-category {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .category-img {
+        width: 120px;
+        top: -18px;
+    }
+    
+    /* off pet */
+    .off-pet {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .off-swiper-button-next,
+    .off-swiper-button-prev {
+        opacity: 1 !important;
+        font-size: x-large !important;
+    }
+
+    .off-swiper-button-prev {
+        right: -10px;
+    }
+
+    .off-swiper-button-next {
+        left: -25px;
+    }
+
+    .off-buttons {
+        display: none;
+    }
+
+    .btn-heart {
+        display: flex !important;
+    }
+    .off-pet {
+        flex-direction: column;
+    }
+    .off-pet-right {
+        width: 100%;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .off-pet-right h2 {
+        width: 80%;
+    }
+    .off-pet-left {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
 }
 
 @media screen and (max-width : 430px) and (min-width : 370px) {
@@ -139,9 +202,11 @@
         background-color: transparent;
         border: 1px solid rgba(0, 0, 0, 0.105);
     }
+
     .hero-items {
         min-height: 145vh !important;
     }
+
     .hero-img img {
         max-width: 100%;
     }
@@ -194,6 +259,7 @@
     .hero-btn {
         flex-direction: column;
     }
+
     /* Reasons to buy section */
     .s2-div {
         height: auto;
@@ -208,11 +274,13 @@
         margin-right: 10px;
         height: auto;
     }
+
     .s2-box-item1 {
         flex-direction: column !important;
         width: 100% !important;
         align-items: start !important;
     }
+
     .s2-box-item1 p {
         width: 100%;
         margin-right: 0 !important;
@@ -225,15 +293,73 @@
     .s2-item {
         width: 100%;
     }
-    .s2-item-1{
+
+    .s2-item-1 {
         flex-direction: column !important;
         padding-top: 12px;
         padding-bottom: 12px;
     }
 
+    /* food category section */
+    .food-category {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .category-img {
+        width: 120px;
+        top: -18px;
+    }
+    
+    /* off pet */
+    .off-pet {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .off-swiper-button-next,
+    .off-swiper-button-prev {
+        opacity: 1 !important;
+        font-size: x-large !important;
+    }
+
+    .off-swiper-button-prev {
+        right: -10px;
+    }
+
+    .off-swiper-button-next {
+        left: -25px;
+    }
+
+    .off-buttons {
+        display: none;
+    }
+
+    .btn-heart {
+        display: flex !important;
+    }
+    .off-pet {
+        flex-direction: column;
+    }
+    .off-pet-right {
+        width: 100%;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .off-pet-right h2 {
+        width: 60%;
+    }
+    .off-pet-left {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+
 }
 
-@media screen and (max-width : 570px) and (min-width : 430px) {
+@media screen and (max-width : 570px) and (min-width : 431px) {
     .header-homepage {
         margin-left: 0.5rem !important;
         margin-right: 0.5rem !important;
@@ -252,9 +378,11 @@
     .header-bottom {
         padding: 0.5rem 1.3rem !important;
     }
+
     .hero-items {
         min-height: 145vh !important;
     }
+
     .cart-icon {
         background-color: transparent;
         border: 1px solid rgba(0, 0, 0, 0.105);
@@ -304,6 +432,7 @@
     .hero-h2 {
         font-size: 30px;
     }
+
     /* Reasons to buy section */
     .s2-div {
         height: auto;
@@ -318,11 +447,13 @@
         margin-right: 10px;
         height: auto;
     }
+
     .s2-box-item1 {
         flex-direction: column !important;
         width: 100% !important;
         align-items: start !important;
     }
+
     .s2-box-item1 p {
         width: 100%;
         margin-right: 0 !important;
@@ -335,11 +466,69 @@
     .s2-item {
         width: 100%;
     }
-    .s2-item-1{
+
+    .s2-item-1 {
         flex-direction: column !important;
         padding-top: 12px;
         padding-bottom: 12px;
     }
+
+    /* food category section */
+    .food-category {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .category-img {
+        width: 120px;
+        top: -18px;
+    }
+    
+    /* off pet */
+    .off-pet {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .off-swiper-button-next,
+    .off-swiper-button-prev {
+        opacity: 1 !important;
+        font-size: x-large !important;
+    }
+
+    .off-swiper-button-prev {
+        right: -10px;
+    }
+
+    .off-swiper-button-next {
+        left: -25px;
+    }
+
+    .off-buttons {
+        display: none;
+    }
+
+    .btn-heart {
+        display: flex !important;
+    }
+    .off-pet {
+        flex-direction: column;
+    }
+    .off-pet-right {
+        width: 100%;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .off-pet-right h2 {
+        width: 50%;
+    }
+    .off-pet-left {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
 }
 
 @media screen and (max-width : 768px) and (min-width: 571px) {
@@ -371,9 +560,11 @@
         padding-right: 90px !important;
         padding-left: 90px !important;
     }
+
     .hero-items {
         min-height: 145vh !important;
     }
+
     .hero-swiper {
         padding-left: 0;
         padding-right: 0;
@@ -433,11 +624,13 @@
         margin-right: 10px;
         height: auto;
     }
+
     .s2-box-item1 {
         flex-direction: column !important;
         width: 100% !important;
         align-items: start !important;
     }
+
     .s2-box-item1 p {
         width: 100%;
         margin-right: 0 !important;
@@ -450,11 +643,64 @@
     .s2-item {
         width: 100%;
     }
-    .s2-item-1{
+
+    .s2-item-1 {
         flex-direction: column !important;
         padding-top: 16px;
         padding-bottom: 16px;
     }
+
+    /* food category section */
+    .food-category {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .off-swiper-button-next,
+    .off-swiper-button-prev {
+        opacity: 1 !important;
+        font-size: x-large !important;
+    }
+
+    .off-swiper-button-prev {
+        right: -10px;
+    }
+
+    .off-swiper-button-next {
+        left: -25px;
+    }
+
+    .off-buttons {
+        display: none;
+    }
+
+    .btn-heart {
+        display: flex !important;
+    }
+    .off-pet {
+        flex-direction: column;
+    }
+    .off-pet-right {
+        width: 100%;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .off-pet-right h2 {
+        width: 30%;
+    }
+    .off-pet-left {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
 }
 
 @media screen and (max-width : 992px) and (min-width: 768px) {
@@ -495,9 +741,11 @@
     .swiper-right {
         align-items: center !important;
     }
+
     .hero-items {
         min-height: 90vh !important;
     }
+
     .hero-img {
         width: 308px;
     }
@@ -524,16 +772,60 @@
         height: auto;
         clip-path: polygon(0 0, 100% 17%, 100% 100%, 0 100%);
     }
+
     .s2-box {
         margin-left: 10px;
         margin-right: 10px;
     }
+
     .p-box {
         width: 50%;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    
+
+    /* food category section */
+    .food-category {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 2px !important;
+        margin-right: 2px !important;
+    }
+
+    .off-swiper-button-next,
+    .off-swiper-button-prev {
+        opacity: 1 !important;
+        font-size: x-large !important;
+    }
+
+    .off-swiper-button-prev {
+        right: -10px;
+    }
+
+    .off-swiper-button-next {
+        left: -25px;
+    }
+
+    .off-buttons {
+        display: none;
+    }
+
+    .btn-heart {
+        display: flex !important;
+    }
+
+    .off-pet-right {
+        width: 25%;
+    }
+
+    .off-pet-left {
+        width: 75%;
+    }
+
 }
 
 @media screen and (max-width : 1090px) and (min-width: 993px) {
@@ -549,9 +841,11 @@
     .swiper-items {
         padding-right: 80px !important;
     }
+
     .hero-items {
         min-height: 95vh !important;
     }
+
     .hero-swiper {
         padding-left: 0;
         padding-right: 0;
@@ -578,10 +872,24 @@
         height: auto;
         clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%);
     }
+
     .s2-box {
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    /* food category section */
+    .food-category {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
 
 }
 
@@ -594,9 +902,11 @@
     .sidebar {
         display: none !important;
     }
+
     .hero-items {
         min-height: 95vh !important;
     }
+
     .hero-swiper {
         padding-left: 0;
         padding-right: 0;
@@ -618,6 +928,19 @@
         margin-left: 10px;
         margin-right: 10px;
     }
+
+    /* food category section */
+    .food-category {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
 }
 
 @media screen and (max-width : 1280px)and (min-width: 1200px) {
@@ -634,13 +957,27 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .hero-items {
         min-height: 95vh !important;
     }
+
     /* Reasons to buy section */
     .s2-box {
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    /* food category section */
+    .food-category {
+        padding-left: 1px !important;
+        padding-right: 1px !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
 
@@ -653,8 +990,15 @@
         padding-left: 50px;
         padding-right: 50px;
     }
+
     .hero-items {
         min-height: 95vh !important;
+    }
+
+    /* off pet */
+    .off-pet {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
     }
 }
 
@@ -662,4 +1006,11 @@
     .sidebar {
         display: none !important;
     }
+
+    /* food category */
+    .food-category-items {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
 }

@@ -5,6 +5,8 @@ import './ResponsiveHomepage.css'
 import ReasonsToBuySection from "./ReasonsToBuySection";
 import FoodCategorySection from "./FoodCategorySection";
 import OffPetSection from "./OffPetSection";
+import ProductBrandSection from "./ProductBrandSection";
+import AboutPetShopSection from "./AboutPetShopSection";
 
 export default function IndexHomepage(){
     return(
@@ -13,6 +15,8 @@ export default function IndexHomepage(){
             <ReasonsToBuySection />
             <FoodCategorySection />
             <OffPetSection />
+            <ProductBrandSection />
+            <AboutPetShopSection />
         </div>
     )
 }

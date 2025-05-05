@@ -57,7 +57,7 @@ export default function OffPetSection() {
     };
     return (
         <div className="bg-pink h-auto">
-            <div className="off-pet mx-5 px-3 pt-3 pb-5 d-flex h-auto">
+            <div className="off-pet mx-5 px-3 pt-3 pb-3 d-flex h-auto">
                 <div className="off-pet-right position-relative d-flex flex-column gap-2 justify-content-start align-items-center p-2 mt-3  rounded-5">
                     <h2 className="text-white text-center aligne-justify">آف پــــت وودمارت</h2>
                     <a href="" className="text-success bg-white rounded-3 px-3 py-2 fs-6 ">اینجا کلیک کنید</a>
@@ -84,7 +84,6 @@ export default function OffPetSection() {
                                 450: { slidesPerView: 2 }, 
                                 768: { slidesPerView: 3 }, 
                                 992: { slidesPerView: 4 }, 
-
                             }}
                         >
                             {items?.map((item, index) => (
@@ -117,17 +116,15 @@ export default function OffPetSection() {
                                             </div>
                                             <h2 className=" text-black fs-6 fw-light">{item.title}</h2>
                                             <div className="d-flex text-secondary "><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /></div>
-                                            <p className='f-vazir-fanum'>تومان{item.price}</p>
+                                            <p className='f-vazir-fanum text-orange fw-semibold'>تومان{item.price}</p>
                                             <a href={item.link} className="bg-orange rounded-4 py-2 px-3 mb-2 text-white fs-11 fw-bolder">
                                                 انتخاب گزینه ها
                                             </a>
                                             <div className="off-buttons d-flex flex-column gap-2 position-absolute text-black fs-4 p-3 py-2 opacity-0 rounded-3 bg-white">
-                                                <div className=""><MdOutlineCompareArrows /></div>
+                                                <div className="user-select-all "><MdOutlineCompareArrows /></div>
                                                 <div className=""><IoSearchOutline /></div>
                                                 <div className=""><IoMdHeartEmpty /></div>
-
                                             </div>
-                                           
                                         </div>
                                     </div>
                                 </SwiperSlide>

@@ -45,7 +45,14 @@ a {
 .fs-14 {
     font-size: 14px;
 }
-
+.px-6 {
+    padding-left: 3.5rem !important;
+    padding-right: 3.5rem !important;
+}
+.px-7 {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+}
 /* header */
 .header-homepage {
     top: 10px;
@@ -142,9 +149,12 @@ a {
     color: rgba(51, 51, 51, 0.7);
 }
 
-.bg-pink {
+.bg-pink-1 {
     color: rgba(237, 153, 81, 1);
     background-color: rgba(251, 235, 220, 1);
+}
+.bg-pink{
+    background-color: #fffaee;
 }
 
 .text-orange {
@@ -507,6 +517,8 @@ h1 {
     top: 30px;
     z-index: 15;
     visibility: hidden;
+    cursor: pointer;
+    user-select: auto;
 }
 
 .swiper-item:hover .off-buttons {
@@ -555,4 +567,86 @@ h1 {
     left: 20px;
     top: 20px;
     box-shadow: 0 0 4px rgba(0,0,0,0.12);
+}
+/* product brands section */
+.right-content{
+    width: 86.3%;
+}
+.right-content p {
+    width: 90%;
+    font-size: 82%;
+    text-align: justify;
+}
+.right-content img{
+ left: -27px;
+ top: 28px;
+ height: 57%;
+ width: 1.7rem;
+}
+.left-section {
+    width: 75%;
+}
+/* about pet shop section */
+.about-section {
+    /* clip-path: polygon(
+  0 0,
+  100% 0,
+  100% 80%,
+  0 100%
+); */
+height: 34.8rem !important;
+
+z-index: -2;
+}
+.about-item1 {
+    width: 25%;
+    box-shadow: 0px 0px 30px 0px rgba(208.00000000000003, 130.00000000000003, 102.00000000000001, 0.31);
+    padding: 20px 20px 20px 20px;
+    z-index: 11 !important;
+    height: 28.8rem !important;
+    min-height: fit-content;
+}
+.box-shadow-1 {
+    box-shadow: 0px 0px 30px 0px rgba(208.00000000000003, 130.00000000000003, 102.00000000000001, 0.31);
+
+}
+.about-input1 {
+    height: 2.8rem;
+    padding: 0 15px;
+    border: solid 2px rgba(0, 0, 0, 0.1) !important;
+}
+.about-textarea{
+    overflow: auto;
+    padding: 10px 15px; 
+    resize: vertical;  
+    border: solid 2px rgba(0, 0, 0, 0.1) !important;
+    font-size: 14px;
+    height: 9rem;
+}
+.about-item2{
+    width: 26%;
+    z-index: 10 !important;
+}
+.about-item2 .hero-img {
+    width: 350px !important;
+}
+.about-item3 {
+    width: 44%;
+    margin-right: 3rem;
+}
+.about-item3 p {
+    text-align: justify;
+    font-size: 17px;
+    color: #273544B0;
+}
+.about-item {
+    box-shadow: 0px 0px 30px 0px rgba(208.00000000000003, 130.00000000000003, 102.00000000000001, 0.31);
+}
+.about-img {
+    width: 48px;
+}
+.about-img2 {
+    width: 11px;
+    top: 7px;
+    left: -11px;
 }

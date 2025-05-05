@@ -10,7 +10,7 @@ function CartIcon({ count = 0 }) {
     <div className="">
       <div className="position-relative d-inline-block" onClick={() => setIsOpen(true)}>
 
-        <div className="rounded-circle bg-pink cart-icon d-flex align-items-center justify-content-center"
+        <div className="rounded-circle bg-pink-1 cart-icon d-flex align-items-center justify-content-center"
           style={{ width: '40px', height: '40px' }}>
           <RiShoppingCartLine size={20} className="" />
         </div>

@@ -1,7 +1,7 @@
 export default function Main() {
   return (
     <main>
-      <div className="mx-3 mt-1">
+      <div className="mx-3 mt-1 mx-xl-4">
         <div className="d-flex justify-content-between py-4">
           <div>
             <span>خانه / </span>

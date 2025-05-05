@@ -140,6 +140,16 @@ nav .social-media {
     min-height: 56px;
 }
 
+.category-item:hover {
+    background-color: #f7f7f7;
+    color: #555;
+}
+
+.showmore-btn {
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
 /* main */
 
 main {

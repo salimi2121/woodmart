@@ -28,7 +28,7 @@ export default function SearchBox() {
           </div>
           {isOpen && (
             <div className="select-category-menu bg-white position-absolute w-100 z-2">
-              <ul className="pt-2 mx-3">
+              <ul className="pt-2 px-3">
                 <li className="pointer text-end py-2">غذای گربه</li>
                 <li className="pointer text-end py-2">غذای ماهی</li>
               </ul>

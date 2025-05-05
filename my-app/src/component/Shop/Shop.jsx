@@ -1,3 +1,4 @@
+import './Shop.css';
 import Header from "./Header/Header";
 import Main from "./MainSection/MainSection";
 import SocialMedia from "./SocialMedia";

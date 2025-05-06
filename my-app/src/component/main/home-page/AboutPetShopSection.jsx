@@ -40,22 +40,21 @@ export default function AboutPetShopSection() {
                                 <img src={a1} alt="" className='rounded-3 about-img' />
                                 <img src={ar} alt="" className='about-img2 position-absolute ' />
                             </div>
-                            <p className="text-black fw-semibold"><span className="text-secondary">آدرس:</span>تهران، خیابان انقلاب، نبش کوچه سوم</p>
+                            <p className="text-black fw-semibold m-0"><span className="text-secondary">آدرس:</span> تهران، خیابان انقلاب، نبش کوچه سوم</p>
                         </div>
                         <div className="about-item d-flex gap-5 align-items-center rounded-4 bg-white w-100 mb-2 text-black p-2">
                             <div className="position-relative ">
                                 <img src={a2} alt="" className='rounded-3 about-img' />
                                 <img src={ar} alt="" className='about-img2 position-absolute ' />
                             </div>
-                            <p className="text-black fw-semibold"><span className="text-secondary">ایمیل: </span>yourmail@gmail.com</p>
+                            <p className="text-black fw-semibold m-0"><span className="text-secondary">ایمیل: </span>yourmail@gmail.com</p>
                         </div>
                         <div className="about-item d-flex gap-5 align-items-center rounded-4 bg-white w-100 text-black p-2">
                             <div className="position-relative ">
                                 <img src={a3} alt="" className='rounded-3 about-img' />
                                 <img src={ar} alt="" className='about-img2 position-absolute ' />
                             </div>
-                            <p className="text-black fw-semibold"><span className="text-secondary">تلفن:</span> ۰۹۱۲۳۴۵۶۷۸۹ و ۰۹۱۲۳۴۵۶۷۸۹
-                            </p>
+                            <p className="text-black fw-semibold m-0"><span className="text-secondary">تلفن: </span>۰۹۱۲۳۴۵۶۷۸۹و ۰۹۱۲۳۴۵۶۷۸۹                          </p>
                         </div>
 
                     </div>

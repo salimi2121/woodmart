@@ -7,6 +7,7 @@ import FoodCategorySection from "./FoodCategorySection";
 import OffPetSection from "./OffPetSection";
 import ProductBrandSection from "./ProductBrandSection";
 import AboutPetShopSection from "./AboutPetShopSection";
+import ProductCategorySection from "./ProductCategorySection";
 
 export default function IndexHomepage(){
     return(
@@ -17,6 +18,8 @@ export default function IndexHomepage(){
             <OffPetSection />
             <ProductBrandSection />
             <AboutPetShopSection />
+            <ProductCategorySection />
+            
         </div>
     )
 }

@@ -221,3 +221,7 @@ main {
     color: white;
     background: var(--orange);
 }
+
+.filter:hover .checkbox {
+    border-color: var(--orange) !important;
+}

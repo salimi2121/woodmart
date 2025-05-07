@@ -1,3 +1,5 @@
+import FilterSection from "./FilterSection";
+
 export default function Main() {
   return (
     <main>
@@ -10,7 +12,9 @@ export default function Main() {
           <span className="text-secondary d-1025-block d-none">در حال نمایش 6 نتیجه</span>
         </div>
         <section>
-            <div className="d-flex justify-content-between"></div>
+            <div className="d-flex justify-content-between">
+              <FilterSection />
+            </div>
         </section>
       </div>
     </main>

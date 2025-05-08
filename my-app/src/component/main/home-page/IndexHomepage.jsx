@@ -8,18 +8,26 @@ import OffPetSection from "./OffPetSection";
 import ProductBrandSection from "./ProductBrandSection";
 import AboutPetShopSection from "./AboutPetShopSection";
 import ProductCategorySection from "./ProductCategorySection";
+import BestSellingProductsSection from "./BestsellingproductsSection";
+import { ProductProvider } from "../../../ProductContext";
 
-export default function IndexHomepage(){
-    return(
-        <div className=""  dir="rtl">
+export default function IndexHomepage() {
+    return (
+        <div className="" dir="rtl">
             <HeroSectionHomepage />
             <ReasonsToBuySection />
             <FoodCategorySection />
-            <OffPetSection />
+            <ProductProvider>
+                <OffPetSection />
+            </ProductProvider>
             <ProductBrandSection />
             <AboutPetShopSection />
             <ProductCategorySection />
-            
+            <ProductProvider >
+                <BestSellingProductsSection />
+            </ProductProvider>
+
+
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useData } from '../../../ProductContext';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -13,47 +14,18 @@ import { IoSearchOutline } from "react-icons/io5";
 import { IoMdHeartEmpty, IoMdCheckmark } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { TfiShoppingCart } from "react-icons/tfi";
+
 
 export default function OffPetSection() {
-    const items = [
-        {
-            id: 1,
-            category: '',
-            title: 'غذای گربه',
-            image: img5,
-            price: '400',
-            link: ''
-        },
-        {
-            id: 2,
-            category: '',
-            title: 'غذای گربه',
-            image: img6,
-            price: '400',
-            link: ''
-        }, {
-            id: 2,
-            category: '',
-            title: 'غذای گربه',
-            image: img6,
-            price: '400',
-            link: ''
-        }, {
-            id: 2,
-            category: '',
-            title: 'غذای گربه',
-            image: img6,
-            price: '400',
-            link: ''
-        },
-    ];
+    const { product } = useData();
     const [clickedHearts, setClickedHearts] = useState({});
 
     const handleHeartClick = (itemId) => {
-      setClickedHearts(prev => ({
-        ...prev,
-        [itemId]: !prev[itemId]
-      }));
+        setClickedHearts(prev => ({
+            ...prev,
+            [itemId]: !prev[itemId]
+        }));
     };
     return (
         <div className="bg-pink h-auto">
@@ -70,7 +42,10 @@ export default function OffPetSection() {
                         <Swiper
                             modules={[Navigation, Autoplay]}
                             loop={true}
-                            autoplay={true}
+                            autoplay={{
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            }}
                             navigation={{
                                 nextEl: '.off-swiper-button-next',
                                 prevEl: '.off-swiper-button-prev',
@@ -80,13 +55,13 @@ export default function OffPetSection() {
                             autoHeight={true}
                             breakpoints={{
                                 // تنظیمات ریسپانسیو
-                                280: { slidesPerView: 1 }, 
-                                450: { slidesPerView: 2 }, 
-                                768: { slidesPerView: 3 }, 
-                                992: { slidesPerView: 4 }, 
+                                280: { slidesPerView: 1 },
+                                450: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 },
+                                992: { slidesPerView: 4 },
                             }}
                         >
-                            {items?.map((item, index) => (
+                            {product?.map((item, index) => (
                                 <SwiperSlide key={index}>
                                     <div
                                         className="off-swiper-items g-0 d-flex justify-content-center align-items-center ms-2 w-100 h-100 rounded-2"
@@ -107,18 +82,21 @@ export default function OffPetSection() {
                                                         e.target.src = '/placeholder.jpg';
                                                     }}
                                                 />
-                                                 <div
-                                                className="btn-heart d-none position-absolute p-2 fs-5 bg-white rounded-circle text-black"
-                                                onClick={() => handleHeartClick(item.id)}
-                                            >
-                                                {clickedHearts[item.id] ? <IoMdCheckmark /> : <IoMdHeartEmpty />}
-                                            </div>
+                                                <div
+                                                    className="btn-heart d-none position-absolute p-2 fs-5 bg-white rounded-circle text-black"
+                                                    onClick={() => handleHeartClick(item.id)}
+                                                >
+                                                    {clickedHearts[item.id] ? <IoMdCheckmark /> : <IoMdHeartEmpty />}
+                                                </div>
                                             </div>
                                             <h2 className=" text-black fs-6 fw-light">{item.title}</h2>
                                             <div className="d-flex text-secondary "><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /><IoIosStarOutline /></div>
                                             <p className='f-vazir-fanum text-orange fw-semibold'>تومان{item.price}</p>
-                                            <a href={item.link} className="bg-orange rounded-4 py-2 px-3 mb-2 text-white fs-11 fw-bolder">
-                                                انتخاب گزینه ها
+                                            <a href={item.link} className="btn-select bg-orange rounded-5 py-2 px-2 mb-2 text-white fs-11 fw-bolder">
+
+                                                <span className="text-select fs-14">انتخاب گزینه ها</span>
+                                                <div className="icon-select text-white rotate-180 m-0 p-0 "><TfiShoppingCart size={21} /></div>
+
                                             </a>
                                             <div className="off-buttons d-flex flex-column gap-2 position-absolute text-black fs-4 p-3 py-2 opacity-0 rounded-3 bg-white">
                                                 <div className="user-select-all "><MdOutlineCompareArrows /></div>

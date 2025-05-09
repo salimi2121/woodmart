@@ -1,5 +1,4 @@
-import { faAngleDown, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaAngleDown, FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
 
 export default function SearchBox() {
@@ -24,7 +23,7 @@ export default function SearchBox() {
         <div className="select-category position-relative">
           <div className="pointer px-2 ms-2 border border-top-0 border-bottom-0 py-2 d-flex justify-content-between align-items-center" onClick={() => setIsOpen((prev) => !prev)}>
             <span>انتخاب دسته بندی</span>
-            <FontAwesomeIcon icon={faAngleDown} />
+            <FaAngleDown />
           </div>
           {isOpen && (
             <div className="select-category-menu bg-white position-absolute w-100 z-2">
@@ -36,7 +35,7 @@ export default function SearchBox() {
           )
           }
         </div>
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="pointer search-icon" />
+        <FaMagnifyingGlass className="pointer search-icon" />
       </div>
     </div>
   );

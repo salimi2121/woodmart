@@ -1,9 +1,10 @@
 import FilterSection from "./FilterSection";
+import { ProductsSection } from "./ProductsSection";
 
 export default function Main() {
   return (
     <main>
-      <div className="mx-3 mt-1 mx-xl-4">
+      <div className="mx-3 mt-1 mx-xl-5 px-xl-2">
         <div className="d-flex justify-content-between py-4">
           <div>
             <span>خانه / </span>
@@ -12,8 +13,9 @@ export default function Main() {
           <span className="text-secondary d-1025-block d-none">در حال نمایش 6 نتیجه</span>
         </div>
         <section>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between py-3">
               <FilterSection />
+              <ProductsSection />
             </div>
         </section>
       </div>

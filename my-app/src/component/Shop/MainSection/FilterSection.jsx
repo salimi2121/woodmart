@@ -1,5 +1,4 @@
-import { faCheck, faFilter } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaCheck, FaFilter } from "react-icons/fa6";
 import { useState } from "react";
 import { category } from "../constants";
 
@@ -33,11 +32,11 @@ export default function FilterSection() {
     }
 
   return (
-    <section className="w-25 bg-white text-secondary py-4 px-2 border-radius-16 box-shadow">
+    <section className="filter-section w-25 bg-white text-secondary px-2 border-radius-16 box-shadow">
       <div className="container">
-        <div className="title p-2 d-flex align-items-center">
-          <FontAwesomeIcon icon={faFilter} />
-          <h3 className="mx-3 mb-0">فیلتر های فروشگاه</h3>
+        <div className="title p-2 d-flex">
+          <FaFilter />
+          <h3 className="mx-3 mb-0 fw-bold">فیلتر های فروشگاه</h3>
         </div>
         <div className="py-3">
             <h6>وضعیت محصول</h6>
@@ -45,7 +44,7 @@ export default function FilterSection() {
                 {productStatus.map((item, i) => (
                     <li key={i} className="filter d-flex align-items-end pointer" onClick={() => productStatusHandler(i)}>
                         <div className={`checkbox border border-2 text-center ${item.isActive ? "bg-orange border-0" : "bg-white"}`}>
-                          {item.isActive && <FontAwesomeIcon icon={faCheck} className="text-white pb-1" />}
+                          {item.isActive && <FaCheck className="text-white pb-1" />}
                         </div>
                         <span className="mx-2">{item.title}</span>
                     </li>

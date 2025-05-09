@@ -156,6 +156,10 @@ main {
     background-color: rgb(255, 250, 238);
 }
 
+.filter-section {
+    padding-block: 1.25rem;
+}
+
 .title {
     background-color: #efefef;
     color: #464646;
@@ -167,7 +171,7 @@ main {
 }
 
 .title h3 {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .border-radius-16 {
@@ -224,4 +228,13 @@ main {
 
 .filter:hover .checkbox {
     border-color: var(--orange) !important;
+}
+
+.grid-icon {
+    color: #bbb;
+    font-size: 180%;
+}
+
+.grid-icon:hover {
+    color: #666;
 }

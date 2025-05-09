@@ -1,9 +1,8 @@
 import {
-  faAngleDown,
-  faAngleUp,
-  faBars,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  FaAngleDown,
+  FaAngleUp,
+  FaBars,
+} from "react-icons/fa6";
 import { useState } from "react";
 import { category } from "../constants";
 
@@ -20,9 +19,9 @@ export default function DropdownMenu() {
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className="category-menu pointer px-3 py-3 bg-orange text-white d-flex justify-content-center align-items-center">
-        <FontAwesomeIcon icon={faBars} className="ms-2" />
+        <FaBars className="ms-2" />
         <span>دسته بندی محصولات</span>
-        <FontAwesomeIcon icon={faAngleDown} className="me-auto" />
+        <FaAngleDown className="me-auto" />
       </div>
       {isOpen && (
         <div className="position-absolute w-100 z-2 bg-white">
@@ -48,7 +47,7 @@ export default function DropdownMenu() {
               className="showmore-btn border-0 w-100 py-2"
               onClick={() => setShowMore((prev) => !prev)}
             >
-              <FontAwesomeIcon icon={showMore ? faAngleUp : faAngleDown} />
+              {showMore ? <FaAngleUp /> : <FaAngleDown />}
             </button>
           </ul>
         </div>

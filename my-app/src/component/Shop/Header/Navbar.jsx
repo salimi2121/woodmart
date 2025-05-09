@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="header-navbar z-1">
-      <div className="mx-2 mx-xl-4 justify-content-between px-2 d-none d-1025-flex">
+      <div className="mx-2 mx-xl-5 justify-content-between px-2 d-none d-1025-flex">
         <DropdownMenu />
         <ul className="align-self-end">
           {navItems.map((item, i) => {

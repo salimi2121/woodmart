@@ -30,6 +30,14 @@ a {
     background-color: transparent;
 }
 
+.w-60 {
+    width: 60%;
+}
+
+.w-57 {
+    width: 57%;
+}
+
 .w-45 {
     width: 45%;
 }
@@ -37,7 +45,13 @@ a {
 .w-30 {
     width: 33%;
 }
+.w-20{
+    width: 20%;
+}
 
+.w-10{
+    width: 10%;
+}
 .w-15 {
     width: 15rem;
 }
@@ -679,12 +693,13 @@ h1 {
 
 /* best selling product section */
 
-.category-mobail{
+.category-mobail {
     overflow-x: auto !important;
     flex-wrap: nowrap;
     white-space: nowrap;
     padding-bottom: 1rem;
 }
+
 .category-h2 {
     margin-bottom: -2.6px !important;
 
@@ -747,4 +762,30 @@ h1 {
 
 .best-selling-button-next {
     left: -10px;
+}
+
+.app-content {
+    background-image: url(../../../assets/home-page/woodmart-app/bg1.jpg);
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app-img {
+    top: -11rem;
+    left: 3rem;
+    width: 24rem;
+}
+
+.app-content div p {
+    color: #dfdada;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.app-line {
+    width: 8rem;
+}
+.app-icon {
+    width: 11rem !important;
 }

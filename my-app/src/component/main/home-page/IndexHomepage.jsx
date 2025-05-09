@@ -10,6 +10,7 @@ import AboutPetShopSection from "./AboutPetShopSection";
 import ProductCategorySection from "./ProductCategorySection";
 import BestSellingProductsSection from "./BestsellingproductsSection";
 import { ProductProvider } from "../../../ProductContext";
+import WoodmartAppSection from "./WoodmartAppSection";
 
 export default function IndexHomepage() {
     return (
@@ -27,7 +28,9 @@ export default function IndexHomepage() {
                 <BestSellingProductsSection />
             </ProductProvider>
 
+            <WoodmartAppSection />
 
+            
         </div>
     )
 }

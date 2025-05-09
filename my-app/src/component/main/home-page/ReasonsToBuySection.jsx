@@ -1,4 +1,4 @@
-import React from "react";
+
 import s2r from '../../../assets/home-page/Reasons-to-buy/s2-arow.png'
 import line from '../../../assets/home-page/Reasons-to-buy/line-s2.png'
 

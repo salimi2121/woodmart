@@ -31,6 +31,10 @@
     background: var(--orange);
 }
 
+.text-orange {
+    color: var(--orange);
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -237,4 +241,32 @@ main {
 
 .grid-icon:hover {
     color: #666;
+}
+
+.show-count {
+    color: #767676;
+}
+
+.show-count:hover {
+    color: #333;
+}
+
+.ordering {
+    width: 210px;
+}
+
+.ordering:focus {
+    border-color: var(--orange);
+}
+
+.ordering-icon {
+    color: #bbb;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.product-img {
+    width: 176px;
 }

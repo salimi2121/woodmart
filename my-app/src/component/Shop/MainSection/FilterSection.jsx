@@ -1,6 +1,7 @@
 import { FaCheck, FaFilter } from "react-icons/fa6";
 import { useState } from "react";
 import { category } from "../constants";
+import { persianNumber } from "../utils/utils";
 
 export default function FilterSection() {
 
@@ -19,10 +20,10 @@ export default function FilterSection() {
     ]
 
     const weightCategory = [
-      {weight: "1 کیلوگرم", quantity: 6},
-      {weight: "2 کیلوگرم", quantity: 6},
-      {weight: "3 کیلوگرم", quantity: 6},
-      {weight: "4 کیلوگرم", quantity: 6}
+      {weight: "۱ کیلوگرم", quantity: 6},
+      {weight: "۲ کیلوگرم", quantity: 6},
+      {weight: "۳ کیلوگرم", quantity: 6},
+      {weight: "۴ کیلوگرم", quantity: 6}
     ]
 
     function productStatusHandler(i) {
@@ -43,8 +44,8 @@ export default function FilterSection() {
             <ul className="m-0 p-0">
                 {productStatus.map((item, i) => (
                     <li key={i} className="filter d-flex align-items-end pointer" onClick={() => productStatusHandler(i)}>
-                        <div className={`checkbox border border-2 text-center ${item.isActive ? "bg-orange border-0" : "bg-white"}`}>
-                          {item.isActive && <FaCheck className="text-white pb-1" />}
+                        <div className={`checkbox border border-2 d-flex justify-content-center align-items-center ${item.isActive ? "bg-orange border-0" : "bg-white"}`}>
+                          {item.isActive && <FaCheck className="text-white" />}
                         </div>
                         <span className="mx-2">{item.title}</span>
                     </li>
@@ -68,7 +69,7 @@ export default function FilterSection() {
               <li key={i} className="filter pointer d-flex justify-content-center align-items-center">
                 <div className="color rounded-circle" style={{backgroundColor: item.color}}></div>
                 <span className="mx-2">{item.title}</span>
-                <span className="me-auto quantity border px-2">{item.quantity}</span>
+                <span className="me-auto quantity border px-2">{persianNumber(item.quantity)}</span>
               </li>
             ))}
           </ul>
@@ -79,8 +80,8 @@ export default function FilterSection() {
           <ul className="m-0 p-0">
             {weightCategory.map((item, i) => (
               <li key={i} className="filter pointer d-flex justify-content-between align-items-center">
-                <span className="weight fw-bold text-black">{item.weight}</span>
-                <span className="quantity border px-2">{item.quantity}</span>
+                <span className="weight fw-500 text-black">{item.weight}</span>
+                <span className="quantity border px-2">{persianNumber(item.quantity)}</span>
               </li>
             ))}
           </ul>

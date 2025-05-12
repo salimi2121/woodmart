@@ -11,6 +11,7 @@ import ProductCategorySection from "./ProductCategorySection";
 import BestSellingProductsSection from "./BestsellingproductsSection";
 import { ProductProvider } from "../../../ProductContext";
 import WoodmartAppSection from "./WoodmartAppSection";
+import BlogContentSection from "./BlogContentSection";
 
 export default function IndexHomepage() {
     return (
@@ -27,8 +28,8 @@ export default function IndexHomepage() {
             <ProductProvider >
                 <BestSellingProductsSection />
             </ProductProvider>
-
             <WoodmartAppSection />
+            <BlogContentSection />
 
             
         </div>

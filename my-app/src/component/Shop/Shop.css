@@ -1,5 +1,5 @@
 :root {
-    --orange : #ED9951;
+    --orange: #ED9951;
 }
 
 @media screen and (min-width: 1025px) {
@@ -171,7 +171,7 @@ main {
 }
 
 .title svg {
-    font-size: 26px ;
+    font-size: 26px;
 }
 
 .title h3 {
@@ -253,14 +253,26 @@ main {
 
 .ordering {
     width: 210px;
+    border-bottom: 2px solid #dee2e6;
+    transition: .4s ease;
+    font-size: 15px;
 }
 
 .ordering:focus {
-    border-color: var(--orange);
+    border-bottom-color: var(--orange);
 }
 
 .ordering-icon {
     color: #bbb;
+}
+
+.ordering-list {
+    border: 1px solid black;
+}
+
+.ordering-item:hover {
+    background-color: #1E73BE;
+    color: white;
 }
 
 .fw-500 {
@@ -269,4 +281,51 @@ main {
 
 .product-img {
     width: 176px;
+}
+
+.product {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    transition: .2s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.005);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.product-hover {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.ellipsis {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    background: linear-gradient(to bottom, transparent 0, #fff 90%);
+}
+
+.product-hover:hover .ellipsis {
+    visibility: visible;
+    opacity: 1;
+}
+
+.line {
+    width: 1px;
+    height: 20px;
+}
+
+.text-hide {
+    overflow: hidden;
+    height: 50px;
+}
+
+.product-option {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.product-option:hover {
+    color: #767676;
 }

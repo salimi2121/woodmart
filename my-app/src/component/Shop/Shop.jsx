@@ -2,6 +2,7 @@ import './Shop.css';
 import Header from "./Header/Header";
 import Main from "./MainSection/MainSection";
 import SocialMedia from "./SocialMedia";
+import Footer from './Footer/Footer';
 
 export default function Shop() {
   return (
@@ -11,6 +12,7 @@ export default function Shop() {
       </div>
       <Header />
       <Main />
+      <Footer />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { persianNumber } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { FaEllipsis, FaRegStar, FaStar } from "react-icons/fa6";
 import { IoMdHeartEmpty } from "react-icons/io";
-import { IoCartOutline } from "react-icons/io5";
+import { IoCartOutline, IoShuffle } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 
 export default function Products() {
@@ -37,6 +37,11 @@ export default function Products() {
                 onMouseLeave={() => setShowDetails(null)}
               >
                 <div>
+                  {showDetails === item.id && (
+                    <div className="comparison position-absolute border border-end-0 border-start-0 bg-white w-75 text-start px-2">
+                      <IoShuffle className="product-option" />
+                    </div>
+                  )}
                   <Link to="#" className="text-black">
                     <img
                       src={item.img}
@@ -52,9 +57,9 @@ export default function Products() {
                       ? `${persianNumber(item.price.toFixed(3))} تومان`
                       : [...Array(5)].map((_, i) =>
                           i < item.rate ? (
-                            <FaStar color="yellow" />
+                            <FaStar key={i} color="yellow" />
                           ) : (
-                            <FaRegStar className="text-secondary" />
+                            <FaRegStar key={i} className="text-secondary" />
                           )
                         )}
                   </span>

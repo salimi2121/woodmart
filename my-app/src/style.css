@@ -1,0 +1,11 @@
+body{
+    background-color: #FFFAEE;
+    color: #FFFFFF;
+}
+
+p:hover {
+    color: #B1B1B1;
+}
+div container{
+    width: 100%;
+}

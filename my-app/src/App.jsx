@@ -1,18 +1,48 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import Test from './component/Test'
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Food from './component/Food';
+import PopularProducts from './component/PopularProducts';
 
+
+
+
+export default function App() {
   return (
-
-    <Router className="">
-      <Routes>
-        <Route path="/" element={<Test />} />
-      </Routes>
-    </Router>
-
-  )
+    <div dir="rtl">
+      <Food /> ,
+   
+     
+      <PopularProducts /> ,
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+
+// function App() {
+//   // const [count, setCount] = useState(0)
+
+//   return (
+    
+//     <Router className="">
+//           <p style={{ padding: '10px' }}>
+//             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>خانه</Link>
+//             <span> / </span>
+//             <span>غذای گربه</span>
+//           </p>
+//       <Routes>   
+//         <>
+
+        
+//           {/* <Route path="/" element={<HomePage />} /> */}
+//           <Route path="/food" element={<Food />} />
+//         </>
+//       </Routes>
+//     </Router>
+
+//   )
+
+// }
+
+// export default App
+

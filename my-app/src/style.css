@@ -1,11 +1,186 @@
 body{
     background-color: #FFFAEE;
-    color: #FFFFFF;
+    color: #424040;
 }
 
-p:hover {
-    color: #B1B1B1;
+p {
+    color: #848080;
 }
-div container{
+li {
+    color: #848080;
+    line-height: 45px ;
+}
+
+
+/* p:hover {
+    color: #B1B1B1;
+} */
+.container{
     width: 100%;
 }
+
+.first-box {
+    background-color: white;
+    border-radius: 10px;
+    height: 600px;
+    box-shadow: 3px 3px rgba(236, 234, 234, 0.3);
+    padding: 30px ;
+}
+textarea {
+    border: 2px solid rgb(232, 230, 230);
+    border-radius: 50px;
+}
+
+.price-box {
+    border: 1px solid #c6bfbf;
+    height: 70%;
+    border-radius: 20px;
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding-top: 20px ;
+}
+
+.progress-box {
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px ;
+    height: 80px ;
+}
+
+.orange {
+    background-color: #DD9933;
+    border-radius: 100%;
+    color: #DD9933 !important;
+    padding: 5px;
+}
+.red {
+    background-color: #DD3333;
+    border-radius: 100%;
+    color: #DD3333 !important;
+    padding: 5px;
+}
+.green {
+    background-color: #81D742;
+    border-radius: 100%;
+    color: #81D742 !important;
+    padding: 5px;
+}
+.blue {
+    background-color:  rgb(39, 104, 207);
+    border-radius: 100%;
+    color: rgb(39, 104, 207) !important;
+    padding: 5px;
+}
+.blue:hover {
+    text-decoration: solid black;
+}
+
+a {
+    margin-left: 20px;
+    text-decoration: none ;
+    color: rgb(120, 118, 118);
+}
+
+.contact-box {
+    border: 1px dashed rgb(63, 62, 62);
+    border-radius: 20px;
+    margin-top: 30px;
+    height: 100px ;
+}
+
+input {
+    border: 2px solid rgb(232, 230, 230);
+    width: 90%;
+    display: block;
+    border-radius: 50px ;
+    margin-right: 10px ;
+    height: 40px ;
+    margin-bottom: 20px ;
+}
+
+.checkbox {
+    width: 15px ;
+    margin-left: 10px ;
+}
+
+.submit {
+    color: white ;
+    background-color: #ED9951;
+    border-radius: 80px ;
+    width: 60px ;
+    text-align: center;
+}
+
+.btn-whatsup {
+    color: white;
+    background-color: #25D366;
+    margin-left: 5px;
+    margin-right: auto;
+    padding: 10px 20px ;
+    border: 1px solid #81D742;
+    border-radius: 10px ;
+}
+.btn-telegram {
+    color: white;
+    background-color: #2E87CA;
+    padding: 10px 20px ;
+    border: 1px solid #2E87CA;
+    border-radius: 10px ;
+}
+
+.btn-orange {
+    color: white;
+    background-color: #ED9951;
+    border-radius: 30px;
+    border: 1px solid #ED9951;
+    width: 100%;
+    height: 40px ;
+}
+
+.shop-button {
+    margin: 30px ;
+}
+
+.kilogram {
+    color: black;
+}
+
+.submit:hover {
+    color: white;
+    background-color: #ED8A34;
+}
+
+.fourth-box {
+    margin-top: 50px ;
+ 
+}
+
+.fourth-box h3{
+    color: #636363;
+    
+}
+
+.star {
+    color: #c5c3c3;
+}
+
+.img3 {
+    width: 200px  ;
+
+}
+
+.product-box {
+    background-color: white;
+    border-radius: 20px ;
+    width: 250px ;
+    align-items: center;
+    padding: 20PX ;
+    line-height: 25px ;
+}
+
+.org-price {
+    color: #DD9933;
+}
+
+

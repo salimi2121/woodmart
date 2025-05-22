@@ -8,15 +8,20 @@ import PopularProducts from './component/PopularProducts';
 
 export default function App() {
   return (
-    <div dir="rtl">
-      <Food /> ,
-   
-     
-      <PopularProducts /> ,
-      <Footer />
-    </div>
+      <Router>
+        <Food />
+        
+      </Router>
   );
 }
+
+// <div dir="rtl">
+//       <Food /> ,
+   
+     
+//       <PopularProducts /> ,
+//       <Footer />
+//     </div>
 
 
 // function App() {

@@ -6,8 +6,9 @@ export default function ProductInfoBox() {
       <h6 className="mb-3">
         <i className="fas fa-info-circle ms-2"></i> اطلاعات محصول
       </h6>
-      <p><strong>رنگ:</strong> آبی، سبز، قرمز، نارنجی</p>
-      <p><strong>وزن:</strong> ۱ کیلوگرم، ۲ کیلوگرم، ۳ کیلوگرم، ۴ کیلوگرم</p>
+      <p><span style={{color:'#B1B1B1'}}>رنگ:</span > آبی، سبز، قرمز، نارنجی</p>
+      <hr />
+      <p><span style={{color:'#B1B1B1'}}>وزن:</span> ۱ کیلوگرم، ۲ کیلوگرم، ۳ کیلوگرم، ۴ کیلوگرم</p>
     </div>
   );
 }

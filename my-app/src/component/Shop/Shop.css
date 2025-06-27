@@ -345,6 +345,34 @@ main {
 }
 
 .icon {
-    background: linear-gradient(135deg, #F6BA87 0%, #ED9951 100%);;
+    background: linear-gradient(135deg, #F6BA87 0%, #ED9951 100%);
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+}
+
+.contact-title {
+    color: #FFFFFFA8;
+    font-size: 16px;
+}
+
+.contact-content {
+    font-size: 17px;
+}
+
+.footer-social-media {
+    background-color: #FFFFFF36;
+    border-radius: 10px;
+    padding-block: .75rem;
+}
+
+.about-us {
+    border-radius: 20px;
+}
+
+.about-us-description {
+    color: #273544B0;
+    font-size: 16px;
+    line-height: 30px;
 }
 /* linear-gradient(135deg, #F6BA87 0%, #ED9951 100%); 6 16 10 20 */

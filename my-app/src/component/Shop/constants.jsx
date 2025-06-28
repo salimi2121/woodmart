@@ -7,4 +7,11 @@ export const category = [
     "لوازم نگهداری حیوانات",
   ];
 
-  
+export const importantLinks = [
+  {title: "صفحه اصلی", href: "/"},
+  {title: "درباره ما", href: "/درباره-ما"},
+  {title: "فروشگاه", href: "/shop"},
+  {title: "وبلاگ", href: "/وبلاگ"},
+  {title: "تماس با ما", href: "/تماس-با-ما"},
+  {title: "قوانین و مقررات", href: "/قوانین-و-مقررات"},
+]

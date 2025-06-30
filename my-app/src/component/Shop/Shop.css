@@ -25,7 +25,7 @@
         position: absolute;
         top: -15%;
         right: 35%;
-        width: 30% !important;
+        max-width: 30% !important;
     }
 
     footer {
@@ -44,6 +44,27 @@
 @media screen and (min-width: 1300px) {
     .search-box {
         width: 670px;
+    }
+
+    .footer-sections {
+        margin-inline: 4rem;
+    }
+
+    .contact-us {
+        margin-right: 1rem;
+    }
+
+    .important-links {
+        margin-left: 1rem;
+    }
+
+    .about-us {
+        min-width: 27% !important;
+    }
+
+    .about-us-description {
+        font-size: 20px !important;
+        line-height: 35px !important;
     }
 }
 

@@ -3,8 +3,8 @@ import { ProductsSection } from "./ProductsSection";
 
 export default function Main() {
   return (
-    <main>
-      <div className="mx-3 mt-1 mx-xl-5 px-xl-2">
+    <main className="pb-5">
+      <div className="mx-3 mt-1 mx-xl-5 px-xl-2 pb-3">
         <div className="d-flex justify-content-between py-4">
           <div>
             <span>خانه / </span>

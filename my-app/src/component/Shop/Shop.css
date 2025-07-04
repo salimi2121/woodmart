@@ -97,6 +97,10 @@ ul {
     list-style-type: none;
 }
 
+header {
+    z-index: 1000;
+}
+
 .woodmart-logo {
     max-width: 138px;
 }
@@ -197,6 +201,7 @@ nav .social-media {
 .showmore-btn {
     border-radius: 0 0 12px 12px;
 }
+
 
 /* main */
 

@@ -45,7 +45,7 @@ export function ProductsSection() {
   return (
     <div className="w-100 me-3">
       <div className="box-shadow border-radius-16 bg-white p-3 pe-5 d-flex justify-content-center align-items-center">
-        <div className="ms-auto">
+        <div className="ms-auto d-none d-1025-block">
           <span className="fw-500">نشان می دهد : </span>
           {showItemsCount.map((item, i) => (
             <div key={i} className="d-inline-block">
@@ -61,10 +61,14 @@ export function ProductsSection() {
             </div>
           ))}
         </div>
-        <div className="mx-2">
+        <div className="mx-2 d-none d-1025-block">
           <FaBars className="grid-icon ms-1 pointer" />
           <TbLayoutGrid className="grid-icon ms-1 pointer" />
           <TbGridDots className="grid-icon ms-1 pointer" />
+        </div>
+        <div className="pointer d-1025-none ms-auto">
+          <FaBars className="ms-2" />
+          <span className="fw-500">فیلتر محصولات</span>
         </div>
         <div className="position-relative">
           <div

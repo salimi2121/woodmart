@@ -33,7 +33,7 @@ export default function FilterSection() {
     }
 
   return (
-    <section className="filter-section w-25 bg-white text-secondary px-2 border-radius-16 box-shadow">
+    <section className="filter-section d-none d-1025-block w-25 bg-white text-secondary px-2 border-radius-16 box-shadow">
       <div className="container">
         <div className="title p-2 d-flex">
           <FaFilter />

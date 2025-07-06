@@ -3,6 +3,7 @@ import Header from "./Header/Header";
 import Main from "./MainSection/MainSection";
 import SocialMedia from "./SocialMedia";
 import Footer from './Footer/Footer';
+import SideMenu from './SideMenu/SideMenu';
 
 export default function Shop() {
   return (
@@ -11,6 +12,7 @@ export default function Shop() {
         <SocialMedia />
       </div>
       <Header />
+      <SideMenu />
       <Main />
       <Footer />
     </div>

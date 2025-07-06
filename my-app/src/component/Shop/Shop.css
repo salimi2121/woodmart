@@ -98,7 +98,7 @@ ul {
 }
 
 header {
-    z-index: 1000;
+    z-index: 10;
 }
 
 .woodmart-logo {
@@ -443,4 +443,10 @@ main {
 .copyright {
     background: linear-gradient(135deg, #F6BA87 0%, #ED9951 100%);
     border-radius: 16px 16px 0 0;
+}
+
+/* side menu */
+
+.sidemenu {
+    z-index: 1000;
 }

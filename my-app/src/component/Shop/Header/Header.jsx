@@ -4,8 +4,12 @@ import { FaCartShopping, FaMagnifyingGlass } from "react-icons/fa6";
 import SearchBox from "./SearchBox";
 import { FaHeart } from "react-icons/fa";
 import Navbar from "./Navbar";
+import { useContext } from "react";
+import { SideMenuContext } from "../contexts/SideMenuContext";
 
 export default function Header() {
+  const { setIsOpen, setContent } = useContext(SideMenuContext);
+
   return (
     <>
       <header className="bg-white position-sticky top-0 end-0">
@@ -24,7 +28,10 @@ export default function Header() {
             />
           </Link>
           <SearchBox />
-          <div className="pointer header-item d-none d-1025-block">
+          <div
+            className="pointer header-item d-none d-1025-block"
+            onClick={() => setIsOpen(true)}
+          >
             ورود / ثبت نام
           </div>
           <div className="pointer header-item d-none d-1025-block">

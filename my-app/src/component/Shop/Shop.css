@@ -74,19 +74,19 @@
 }
 
 .bg-orange {
-    background: var(--orange);
+    background: var(--orange) !important;
 }
 
 .text-orange {
-    color: var(--orange);
+    color: var(--orange) !important;
 }
 
 .pointer {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .h-full {
-    height: 100vh;
+    height: 100vh !important;
 }
 
 a {
@@ -449,4 +449,36 @@ main {
 
 .sidemenu {
     z-index: 1000;
+    color: #636363;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 100;
+}
+
+.required::after {
+    content: "*";
+    color: red;
+}
+
+.login input:focus {
+    box-shadow: none !important;
+    border-color: #ced4da !important;
+}
+
+.account-icon {
+    color: #f1f1f1;
+    font-size: 54px;
+}
+
+.create-account {
+    border-bottom: 2px solid var(--orange);
+    font-size: 13px;
+    color: #636363;
 }

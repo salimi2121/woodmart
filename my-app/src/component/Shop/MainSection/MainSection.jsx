@@ -10,7 +10,7 @@ export default function Main() {
             <span>خانه / </span>
             <span className="fw-500">فروشگاه</span>
           </div>
-          <span className="text-secondary d-1025-block d-none">در حال نمایش 6 نتیجه</span>
+          <span className="text-secondary d-1025-block d-none">در حال نمایش ۶ نتیجه</span>
         </div>
         <section>
             <div className="d-flex justify-content-between py-3">

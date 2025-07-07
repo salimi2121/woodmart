@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
-import { FaCartShopping, FaMagnifyingGlass } from "react-icons/fa6";
 import SearchBox from "./SearchBox";
-import { FaHeart } from "react-icons/fa";
 import Navbar from "./Navbar";
 import { useContext } from "react";
 import { SideMenuContext } from "../contexts/SideMenuContext";
+import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
 
 export default function Header() {
   const { setIsOpen, setContent } = useContext(SideMenuContext);
@@ -35,17 +34,19 @@ export default function Header() {
             ورود / ثبت نام
           </div>
           <div className="pointer header-item d-none d-1025-block">
-            <FaMagnifyingGlass className="header-icon" />
+            <CiSearch className="header-icon fs-4" />
           </div>
           <div className="pointer position-relative header-item d-none d-1025-block">
-            <FaHeart className="header-icon ms-2 mt-1" />
+            <CiHeart className="header-icon ms-2 mt-1 fs-4" />
             <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
               0
             </span>
           </div>
-          <div className="pointer d-flex justify-content-between align-items-center header-item">
+          <div className="pointer d-flex justify-content-between align-items-center header-item"
+          onClick={() => setIsOpen(true)}
+          >
             <div className="position-relative ms-3">
-              <FaCartShopping className="header-icon ms-2 mt-2" />
+              <CiShoppingCart className="header-icon ms-2 mt-1 fs-4" />
               <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
                 0
               </span>

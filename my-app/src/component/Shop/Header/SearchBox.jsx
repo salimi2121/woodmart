@@ -1,5 +1,6 @@
 import { FaAngleDown, FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
+import { CiSearch } from "react-icons/ci";
 
 export default function SearchBox() {
 
@@ -35,7 +36,7 @@ export default function SearchBox() {
           )
           }
         </div>
-        <FaMagnifyingGlass className="pointer search-icon" />
+        <CiSearch className="pointer search-icon fs-4" />
       </div>
     </div>
   );

@@ -1,30 +1,32 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { persianNumber } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { FaEllipsis, FaRegStar, FaStar } from "react-icons/fa6";
-import { IoMdHeartEmpty } from "react-icons/io";
+import { IoMdCheckmark, IoMdHeartEmpty } from "react-icons/io";
 import { IoCartOutline, IoShuffle } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
+import { ProductsContext } from "../contexts/ProductsContext";
 
 export default function Products() {
-  const [products, setProducts] = useState(null);
+
+  const {products, setProducts} = useContext(ProductsContext)
 
   const [showDetails, setShowDetails] = useState(null);
 
   const [showText, setShowText] = useState(false);
 
-  useEffect(() => {
-    !products &&
-      fetch("src/component/Shop/products.json")
-        .then((response) => response.json())
-        .then((res) => setProducts(res));
-  }, []);
+  function addToFavorite(i) {
+    const updatedProducts = [...products];
+    updatedProducts[i].isFavorite = !updatedProducts[i].isFavorite;
+    setProducts(updatedProducts);
+    localStorage.setItem("products", JSON.stringify(products));
+  }
 
   return (
     <section className="my-3">
       <div className="d-flex flex-wrap">
         {products &&
-          products.map((item) => (
+          products.map((item, i) => (
             <div
               className={`${
                 showDetails === item.id && "z-3"
@@ -84,7 +86,15 @@ export default function Products() {
                       )}
                     </div>
                     <div className="d-flex justify-content-between py-3">
-                      <IoMdHeartEmpty className="product-option" />
+                      {item.isFavorite ? (
+                        <IoMdCheckmark className="product-option"
+                        onClick={() => addToFavorite(i)}
+                         />
+                      ) : (
+                      <IoMdHeartEmpty className="product-option"
+                      onClick={() => addToFavorite(i)}
+                       />
+                      )}
                       <div className="line bg-secondary"></div>
                       <IoCartOutline className="product-option" />
                       <div className="line bg-secondary"></div>

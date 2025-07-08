@@ -202,6 +202,21 @@ nav .social-media {
     border-radius: 0 0 12px 12px;
 }
 
+.search-page {
+    position: fixed;
+    width: 100%;
+    height: 85vh;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.search-page input,
+.search-page ::placeholder {
+    color: #333;
+    font-weight: 600;
+}
+
 
 /* main */
 
@@ -462,6 +477,16 @@ main {
     z-index: 100;
 }
 
+.close-btn {
+    color: #333;
+}
+
+.close-btn:hover {
+    color: #767676;
+}
+
+/* login */
+
 .required::after {
     content: "*";
     color: red;
@@ -481,4 +506,16 @@ main {
     border-bottom: 2px solid var(--orange);
     font-size: 13px;
     color: #636363;
+}
+
+/* cart */
+
+.empty-cart-icon {
+    font-size: 86px;
+    color: #f1f1f1;
+}
+
+.return-btn {
+    font-size: 12px;
+    padding: 6px 14px 8px 14px;
 }

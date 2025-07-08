@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import SearchBox from "./SearchBox";
 import Navbar from "./Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { SideMenuContext } from "../contexts/SideMenuContext";
 import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
+import { IoCloseOutline } from "react-icons/io5";
+import SearchPage from "./SearchPage";
 
 export default function Header() {
   const { setIsOpen, setContent } = useContext(SideMenuContext);
+
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <>
@@ -34,7 +38,17 @@ export default function Header() {
             ورود / ثبت نام
           </div>
           <div className="pointer header-item d-none d-1025-block">
-            <CiSearch className="header-icon fs-4" />
+            {openSearch ? (
+              <IoCloseOutline
+                className="header-icon fs-4"
+                onClick={() => setOpenSearch(false)}
+              />
+            ) : (
+              <CiSearch
+                className="header-icon fs-4"
+                onClick={() => setOpenSearch(true)}
+              />
+            )}
           </div>
           <div className="pointer position-relative header-item d-none d-1025-block">
             <CiHeart className="header-icon ms-2 mt-1 fs-4" />
@@ -42,8 +56,9 @@ export default function Header() {
               0
             </span>
           </div>
-          <div className="pointer d-flex justify-content-between align-items-center header-item"
-          onClick={() => setIsOpen(true)}
+          <div
+            className="pointer d-flex justify-content-between align-items-center header-item"
+            onClick={() => setIsOpen(true)}
           >
             <div className="position-relative ms-3">
               <CiShoppingCart className="header-icon ms-2 mt-1 fs-4" />
@@ -57,6 +72,7 @@ export default function Header() {
         <hr className="mt-1 mb-0" />
       </header>
       <Navbar />
+      {openSearch && <SearchPage setOpenSearch={setOpenSearch} />}
     </>
   );
 }

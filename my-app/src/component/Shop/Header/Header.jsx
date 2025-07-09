@@ -7,11 +7,27 @@ import { SideMenuContext } from "../contexts/SideMenuContext";
 import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import SearchPage from "./SearchPage";
+import { ProductsContext } from "../contexts/ProductsContext";
 
 export default function Header() {
   const { setIsOpen, setContent } = useContext(SideMenuContext);
 
   const [openSearch, setOpenSearch] = useState(false);
+
+  const { products } = useContext(ProductsContext);
+
+  const [searchedItems, setSearchedItems] = useState(null);
+
+  function search(e) {
+    if (e.target.value === "") {
+      setSearchedItems(null);
+    } else {
+      const filteredItems = products.filter((item) =>
+        item.name.includes(e.target.value.trim())
+      );
+      setSearchedItems(filteredItems);
+    }
+  }
 
   return (
     <>
@@ -30,7 +46,11 @@ export default function Header() {
               alt="logo"
             />
           </Link>
-          <SearchBox />
+          <SearchBox
+            searchedItems={searchedItems}
+            setSearchedItems={setSearchedItems}
+            search={search}
+          />
           <div
             className="pointer header-item d-none d-1025-block"
             onClick={() => setIsOpen(true)}
@@ -72,7 +92,14 @@ export default function Header() {
         <hr className="mt-1 mb-0" />
       </header>
       <Navbar />
-      {openSearch && <SearchPage setOpenSearch={setOpenSearch} />}
+      {openSearch && (
+        <SearchPage
+          setOpenSearch={setOpenSearch}
+          searchedItems={searchedItems}
+          setSearchedItems={setSearchedItems}
+          search={search}
+        />
+      )}
     </>
   );
 }

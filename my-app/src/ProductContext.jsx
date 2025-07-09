@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import img1 from './assets/home-page/products-context/g1.jpg'
 import img2 from './assets/home-page/products-context/g2.jpg'
 import img3 from './assets/home-page/products-context/g3.jpg'
@@ -7,10 +7,10 @@ import img5 from './assets/home-page/products-context/g5.jpg'
 import img6 from './assets/home-page/products-context/g6.jpg'
 
 
-const ProductContext = createContext();
+export const ProductContext = createContext();
 
-export const ProductProvider = ({ children }) => {
-    const [product, setproducts] = useState([
+const ProductProvider = ({ children }) => {
+    const [products] = useState([
         {
             id: 1,
             category: 'غذای گربه',
@@ -187,11 +187,123 @@ export const ProductProvider = ({ children }) => {
             link: ''
         },
     ])
-    return (
-        <ProductContext.Provider value={{ product, setproducts }}>
-            {children}
-        </ProductContext.Provider>
+
+   const [cartItems, setCartItems] = useState([]);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedWeight, setSelectedWeight] = useState('');
+ 
+ // بارگذاری سبد خرید از localStorage
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCartItems(JSON.parse(savedCart));
+    }
+  }, []);
+
+  // ذخیره سبد خرید در localStorage هنگام تغییر
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // افزودن به سبد خرید
+  const addToCart = (product) => {
+    setCartItems(prevItems => {
+      // بررسی وجود محصول مشابه در سبد
+      const existingItem = prevItems.find(item => 
+        item.id === product.id && 
+        item.color === product.color && 
+        item.weight === product.weight
+      );
+
+      if (existingItem) {
+        // افزایش تعداد اگر موجود باشد
+        return prevItems.map(item =>
+          item.id === product.id && 
+          item.color === product.color && 
+          item.weight === product.weight
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // افزودن جدید اگر موجود نباشد
+        return [...prevItems, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
+  // حذف از سبد خرید
+  const removeFromCart = (productId, color, weight) => {
+    setCartItems(prevItems => 
+      prevItems.filter(item => 
+        !(item.id === productId && 
+          item.color === color && 
+          item.weight === weight)
+      )
     );
+  };
+
+  // تغییر تعداد محصول در سبد خرید
+  const updateCartItemQuantity = (productId, color, weight, newQuantity) => {
+    if (newQuantity < 1) {
+      removeFromCart(productId, color, weight);
+      return;
+    }
+
+    setCartItems(prevItems =>
+      prevItems.map(item =>
+        item.id === productId && 
+        item.color === color && 
+        item.weight === weight
+          ? { ...item, quantity: newQuantity }
+          : item
+      )
+    );
+  };
+
+  // محاسبه جمع کل سبد خرید
+  const cartTotal = cartItems.reduce(
+    (total, item) => total + (item.price * item.quantity),
+    0
+  );
+
+  // تعداد کل آیتم‌های سبد خرید
+  const cartItemsCount = cartItems.reduce(
+    (count, item) => count + item.quantity,
+    0
+  );
+
+ // موجودی انبار
+  const stockInfo = {
+    'قرمز': { '1 کیلوگرم': 5, '2 کیلوگرم': 3, '3 کیلوگرم': 2, '4 کیلوگرم': 1 },
+    'آبی': { '1 کیلوگرم': 7, '2 کیلوگرم': 4, '3  کیلوگرم': 3, '4 کیلوگرم': 2 },
+    'سبز': { '1 کیلوگرم': 4, '2 کیلوگرم': 2, '3  کیلوگرم': 1, '4 کیلوگرم': 0 },
+    'مشکی': { '1 کیلوگرم': 8, '2 کیلوگرم': 5, '3  کیلوگرم': 3, '4 کیلوگرم': 2 },
+    'آجری': { '1 کیلوگرم': 6, '2 کیلوگرم': 4, '3  کیلوگرم': 2, '4 کیلوگرم': 1 }
+  };
+
+  return (
+    <ProductContext.Provider
+      value={{
+        products,
+        cartItems,
+        cartTotal,
+        cartItemsCount,
+        stockInfo,
+        selectedProduct,
+        selectedColor,
+        selectedWeight,
+        setSelectedProduct,
+        setSelectedColor,
+        setSelectedWeight,
+        addToCart,
+        removeFromCart,
+        updateCartItemQuantity,
+      }}
+    >
+      {children}
+    </ProductContext.Provider>
+  );
 };
 
-export const useData = () => useContext(ProductContext);
+export default ProductProvider;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useData } from '../../../ProductContext';
+import  useProduct  from '../../../useProduct.js';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -16,7 +16,7 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 
 export default function BestSellingProductsSection() {
-    const { product } = useData();
+    const { product } = useProduct();
     const [clickedHearts, setClickedHearts] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [opacity, setOpacity] = useState(1);

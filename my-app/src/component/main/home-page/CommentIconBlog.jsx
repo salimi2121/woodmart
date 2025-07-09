@@ -1,4 +1,3 @@
-import React from 'react';
 import { RxChatBubble } from "react-icons/rx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

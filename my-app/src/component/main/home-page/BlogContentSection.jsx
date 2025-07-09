@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -90,8 +89,8 @@ export default function BlogContentSection() {
                         </div>
 
                     </div>
-                    <div className="w-100 d-flex overflow-hidden ">
-                        <div className="position-relative blog-swiper flex justify-content-center align-items-center w-100">
+                    <div className="w-100 d-flex justify-content-center overflow-hidden ">
+                        <div className="position-relative blog-swiper flex justify-content-center align-items-center w-100 px-4">
                             <Swiper
                                 modules={[Navigation, Autoplay]}
                                 loop={true}

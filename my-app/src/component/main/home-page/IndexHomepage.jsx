@@ -4,12 +4,12 @@ import './Homepage.css'
 import './ResponsiveHomepage.css'
 import ReasonsToBuySection from "./ReasonsToBuySection";
 import FoodCategorySection from "./FoodCategorySection";
-import OffPetSection from "./OffPetSection";
+import OffPetSection from "./OffPetSection/OffPetSection";
 import ProductBrandSection from "./ProductBrandSection";
 import AboutPetShopSection from "./AboutPetShopSection";
 import ProductCategorySection from "./ProductCategorySection";
-import BestSellingProductsSection from "./BestsellingproductsSection";
-import { ProductProvider } from "../../../ProductContext";
+import BestSellingProductsSection from "./BestSellingProductsSection";
+import  ProductProvider  from "../../../ProductContext";
 import WoodmartAppSection from "./WoodmartAppSection";
 import BlogContentSection from "./BlogContentSection";
 

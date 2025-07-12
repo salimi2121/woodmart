@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import BurgerMenu from "./BurgerMenu";
 import SearchBox from "./SearchBox";
 import Navbar from "./Navbar";
 import { useContext, useState } from "react";
@@ -8,6 +7,8 @@ import { CiHeart, CiSearch, CiShoppingCart } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import SearchPage from "./SearchPage";
 import { ProductsContext } from "../contexts/ProductsContext";
+import { FaBars } from "react-icons/fa6";
+import SideMenu from '../SideMenu/SideMenu';
 
 export default function Header() {
   const { setIsOpen, setContent } = useContext(SideMenuContext);
@@ -33,7 +34,13 @@ export default function Header() {
     <>
       <header className="bg-white position-sticky top-0 end-0">
         <div className="mx-2 mx-xl-5 d-flex justify-content-between align-items-center py-3 px-2">
-          <BurgerMenu />
+          <div
+            className="d-1025-none pointer text-secondary"
+            onClick={() => setIsOpen(true)}
+          >
+            <FaBars />
+            <span className="mx-2">منو</span>
+          </div>{" "}
           <Link to="/">
             <img
               src="/wood-logo-dark.svg"
@@ -100,6 +107,7 @@ export default function Header() {
           search={search}
         />
       )}
+      <SideMenu searchedItems={searchedItems} search={search} setSearchedItems={setSearchedItems} />
     </>
   );
 }

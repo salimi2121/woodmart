@@ -1,7 +1,7 @@
 import { FaAngleDown } from "react-icons/fa6";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { persianNumber } from "../utils/utils";
+import SearchedProduct from "./SearchedProduct";
 
 export default function SearchBox(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,26 +37,7 @@ export default function SearchBox(props) {
       {props.searchedItems && (
         <div className="position-absolute border bg-white mx-auto z-3 searchbox-menu overflow-y-scroll">
           <div className="d-flex flex-wrap justify-content-center">
-            {props.searchedItems &&
-              props.searchedItems.map((item) => (
-                <div
-                  className="searched-product d-flex p-3 pointer align-items-center "
-                  key={item.id}
-                >
-                  <img src={item.img} alt="" className="searched-product-img" />
-                  <div className="d-flex flex-column me-3">
-                    <span>{item.name}</span>
-                    <span className="text-orange fw-500">{`${persianNumber(
-                      item.price.toFixed(3)
-                    )} تومان`}</span>
-                  </div>
-                </div>
-              ))}
-            {props.searchedItems && props.searchedItems.length === 0 && (
-              <span className="text-secondary fw-500 my-3">
-                محصولی یافت نشد
-              </span>
-            )}
+            <SearchedProduct searchedItems={props.searchedItems} />
           </div>
           {props.searchedItems && props.searchedItems.length !== 0 && (
             <div className="view-all text-center py-3 mt-3 pointer border-top border-1">

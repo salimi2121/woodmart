@@ -251,6 +251,48 @@ nav .social-media {
     width: 65px;
 }
 
+.search-section {
+    box-shadow: 0 -1px 9px rgba(0, 0, 0, .17);
+}
+
+.search-section input {
+    border: 0;
+    color: #767676;
+}
+
+.search-section input:focus {
+    border-left: 1px solid #dee2e6;
+}
+
+.menu {
+    font-size: 14px !important;
+}
+
+.menu .searched-product-img {
+    width: 45px;
+}
+
+.searched-products-list {
+    max-height: 330px;
+    height: auto;
+}
+
+.option-btn {
+    background-color: rgba(0, 0, 0, .04);
+    color: #909090;
+    font-size: 13px;
+}
+
+.option-btn:hover,
+.menu .active {
+    color: #333;
+    border-bottom: 2px solid var(--orange);
+}
+
+.menu .active {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
+
 /* main */
 
 main {
@@ -498,6 +540,7 @@ main {
 .sidemenu {
     z-index: 1000;
     color: #636363;
+    width: 29% !important;
 }
 
 .overlay {

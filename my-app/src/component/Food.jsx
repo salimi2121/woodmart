@@ -18,7 +18,7 @@ export default function Food() {
 
       <div className="row first-box">
         {/* تصویر محصول */}
-        <div className="col-md-4 text-center">
+        <div className="col-lg-4 col-md-6 col-sm-12  text-center">
           <img
             src="../src/assets/Cat-Food-Ragu-with-Lamb-Whiskas-1-12-Months.jpg"
             alt="cat food"
@@ -28,12 +28,12 @@ export default function Food() {
         </div>
 
         {/* بخش توضیحات و اطلاعات */}
-        <div className="col-md-4">
+        <div className="col-lg-4 col-md-6 col-sm-12 ">
           <h2 className="mb-3">غذای خشک گربه نوع ۱</h2>
           <ul className="list-unstyled">
-            <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-            <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-            <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+            <li className='li-text'>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+            <li className='li-text'>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+            <li className='li-text'>لورم ایپسوم متن ساختگی با تولید سادگی</li>
           </ul>
           <div className='progress-box'>
             <div className="d-flex justify-content-between my-2">
@@ -56,11 +56,11 @@ export default function Food() {
           </div>
 
           {/* دکمه‌ها */}
-          <div className="d-flex flex-wrap gap-2 mb-3 ">
-          <button className="btn btn-outline-success flex-fill">
+          <div className="d-flex flex-nowrap gap-2 mb-3 ">
+          <button className="btn btn-outline-success flex-fill btn-extra">
               <i className="fas fa-heart ms-2"></i>افزودن به علاقه‌مندی
             </button>
-            <button className="btn btn-outline-secondary flex-fill">
+            <button className="btn btn-outline-secondary flex-fill btn-extra">
               <i className="fas fa-random ms-2"></i>افزودن برای مقایسه
             </button>
             
@@ -72,16 +72,22 @@ export default function Food() {
           <p>
             شناسه محصول: <span className="text-muted">نا‌معلوم</span>
           </p>
-          <p>
-            دسته: <span className="text-muted">غذای گربه</span>
+          <p className='mb-5'>
+            دسته: <span className="text-muted ">غذای گربه</span>
           </p>
 
           </div>
           
         </div>
 
-          <div className="col-md-4 text-center">
-            <span>اشتراک گذاری</span>
+          <div className="col-lg-4 col-md-12 col-sm-12 text-center ">
+            <div>اشتراک گذاری
+              <span><i className=''>kjdsjjsk</i></span>
+              <span><i className=''>kdkdks</i></span>
+              <span><i className=''></i></span>
+              <span><i className=''></i></span>
+              <span><i className=''></i></span>
+            </div>
 
 
             <div className="price-box">
@@ -95,7 +101,7 @@ export default function Food() {
                 <a href="#" className='orange'>.....</a>
               </span>
               <p style={{margin: '20px '}}>وزن</p>
-              <span style={{margin: '20px '}}>
+              <span style={{margin: '20px '}} className='weight-box'>
                 <a href="#" className='kilogram'>1کیلوگرم</a>
                 <a href="#" className='kilogram'>2کیلوگرم</a>
                 <a href="#" className='kilogram'>3کیلوگرم</a>
@@ -105,9 +111,9 @@ export default function Food() {
                 <button type='button' className='btn-orange '>افزودن به سبد خرید</button>
               </div>
             </div>
-            <div className="contact-box ">
-                <p>برای دریافت مشاوره با ما در ارتباط باشید.</p>
-                <div className="d-flex justify-content-center ">
+            <div className="contact-box">
+                <p className='mt-2'>برای دریافت مشاوره با ما در ارتباط باشید.</p>
+                <div className="d-flex ">
                   <a href="#" className='btn-whatsup'> ارتباط در واتس اپ  </a>
                   <a href="#" className='btn-telegram'> ارتباط در  تلگرام  </a>
                 </div>
@@ -124,11 +130,11 @@ export default function Food() {
 
       <div className='row mb-3 mt-3 second-box'>
 
-        <div className="col-md-8">
+        <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <ProductDescription />
         </div>
 
-        <div className="col-md-4">
+        <div className="col-lg-4 col-md-12 col-sm-12">
           <ProductInfoBox />
         </div>
 

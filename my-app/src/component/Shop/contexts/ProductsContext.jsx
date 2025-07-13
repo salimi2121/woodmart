@@ -3,7 +3,10 @@ import { createContext, useEffect, useState } from "react";
 export const ProductsContext = createContext();
 
 export function ProductsContextProvider({ children }) {
+
   const [products, setProducts] = useState(null);
+
+  const [favorite, setFavorite] = useState([]);
 
   useEffect(() => {
     const savedProducts = JSON.parse(localStorage.getItem("products"));
@@ -17,7 +20,7 @@ export function ProductsContextProvider({ children }) {
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ products, setProducts }}>
+    <ProductsContext.Provider value={{ products, setProducts, favorite, setFavorite }}>
       {children}
     </ProductsContext.Provider>
   );

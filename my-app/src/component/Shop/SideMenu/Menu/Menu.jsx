@@ -1,12 +1,21 @@
 import { CiSearch } from "react-icons/ci";
-import SearchedProduct from "../Header/SearchedProduct";
+import SearchedProduct from "../../Header/SearchedProduct";
 import { useState } from "react";
+import List from "./List";
 
 export default function Menu(props) {
   const [options, setOptions] = useState([
-    { title: "منو", component: "MenuList", isActive: true },
-    { title: "دسته بندی ها", component: "CategoryList", isActive: false },
+    { title: "منو", isActive: true },
+    { title: "دسته بندی ها", isActive: false },
   ]);
+
+  function changeBtn(i) {
+    const updatedOptions = [...options];
+    updatedOptions.map((item, index) => {
+      index === i ? (item.isActive = true) : (item.isActive = false);
+    });
+    setOptions(updatedOptions);
+  }
 
   return (
     <div className="menu">
@@ -33,15 +42,19 @@ export default function Menu(props) {
         {options.map((item, i) => (
           <div
             key={i}
-            className={`${item.isActive && "active"} option-btn py-3 pointer w-50 fw-bold text-center`}
-            onClick={() =>
-              options.map((item) => (item.isActive = !item.isActive))
-            }
+            className={`${
+              item.isActive && "active"
+            } option-btn py-3 pointer w-50 text-center`}
+            onClick={() => changeBtn(i)}
           >
             {item.title}
           </div>
         ))}
       </div>
+      {options.map(
+        (item, i) =>
+          item.isActive && <List key={i} navItems={props.navItems} topic={item.title} />
+      )}
     </div>
   );
 }

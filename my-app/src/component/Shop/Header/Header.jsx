@@ -15,9 +15,17 @@ export default function Header() {
 
   const [openSearch, setOpenSearch] = useState(false);
 
-  const { products } = useContext(ProductsContext);
+  const { products, favorite } = useContext(ProductsContext);
 
   const [searchedItems, setSearchedItems] = useState(null);
+
+  const [navItems, setNavItems] = useState([
+    { title: "خانه", href: "/", isActive: false },
+    { title: "فروشگاه", href: "/shop", isActive: true },
+    { title: "وبلاگ", href: "/وبلاگ", isActive: false },
+    { title: "تماس با ما", href: "/تماس-با-ما", isActive: false },
+    { title: "درباره ما", href: "/درباره-ما", isActive: false },
+  ]);
 
   function search(e) {
     if (e.target.value === "") {
@@ -30,17 +38,22 @@ export default function Header() {
     }
   }
 
+  function openSideMenu(page) {
+    setContent(page);
+    setIsOpen(true);
+  }
+
   return (
     <>
       <header className="bg-white position-sticky top-0 end-0">
         <div className="mx-2 mx-xl-5 d-flex justify-content-between align-items-center py-3 px-2">
           <div
             className="d-1025-none pointer text-secondary"
-            onClick={() => setIsOpen(true)}
+            onClick={() => openSideMenu("menu")}
           >
             <FaBars />
             <span className="mx-2">منو</span>
-          </div>{" "}
+          </div>
           <Link to="/">
             <img
               src="/wood-logo-dark.svg"
@@ -60,7 +73,7 @@ export default function Header() {
           />
           <div
             className="pointer header-item d-none d-1025-block"
-            onClick={() => setIsOpen(true)}
+            onClick={() => openSideMenu("login")}
           >
             ورود / ثبت نام
           </div>
@@ -80,12 +93,12 @@ export default function Header() {
           <div className="pointer position-relative header-item d-none d-1025-block">
             <CiHeart className="header-icon ms-2 mt-1 fs-4" />
             <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
-              0
+              {favorite ? favorite.length : "0"}
             </span>
           </div>
           <div
             className="pointer d-flex justify-content-between align-items-center header-item"
-            onClick={() => setIsOpen(true)}
+            onClick={() => openSideMenu("cart")}
           >
             <div className="position-relative ms-3">
               <CiShoppingCart className="header-icon ms-2 mt-1 fs-4" />
@@ -98,7 +111,7 @@ export default function Header() {
         </div>
         <hr className="mt-1 mb-0" />
       </header>
-      <Navbar />
+      <Navbar navItems={navItems} />
       {openSearch && (
         <SearchPage
           setOpenSearch={setOpenSearch}
@@ -107,7 +120,7 @@ export default function Header() {
           search={search}
         />
       )}
-      <SideMenu searchedItems={searchedItems} search={search} setSearchedItems={setSearchedItems} />
+      <SideMenu searchedItems={searchedItems} search={search} setSearchedItems={setSearchedItems} navItems={navItems} />
     </>
   );
 }

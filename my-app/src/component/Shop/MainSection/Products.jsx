@@ -3,23 +3,42 @@ import { persianNumber } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { FaEllipsis, FaRegStar, FaStar } from "react-icons/fa6";
 import { IoMdCheckmark, IoMdHeartEmpty } from "react-icons/io";
-import { IoCartOutline, IoShuffle } from "react-icons/io5";
+import { IoCartOutline, IoCloseOutline, IoShuffle } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import { ProductsContext } from "../contexts/ProductsContext";
 
 export default function Products() {
-
-  const {products, setProducts} = useContext(ProductsContext)
+  const { products, setProducts, favorite, setFavorite } =
+    useContext(ProductsContext);
 
   const [showDetails, setShowDetails] = useState(null);
 
+  const [showOptions, setShowOptions] = useState(null);
+
   const [showText, setShowText] = useState(false);
 
-  function addToFavorite(i) {
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const [selectedWeight, setSelectedWeight] = useState("");
+
+  function addToFavorite(item, i) {
     const updatedProducts = [...products];
-    updatedProducts[i].isFavorite = !updatedProducts[i].isFavorite;
+    updatedProducts[i].isFavorite = true;
     setProducts(updatedProducts);
     localStorage.setItem("products", JSON.stringify(products));
+    setFavorite((prev) => [...prev, item]);
+  }
+
+  function removeFromFavorite(item, i) {
+    const updatedProducts = [...products];
+    updatedProducts[i].isFavorite = false;
+    setProducts(updatedProducts);
+    localStorage.setItem("products", JSON.stringify(products));
+    const updatedFavorite = [...favorite];
+    updatedFavorite.map((favItem, i) => {
+      favItem.id === item.id && updatedFavorite.splice(i, 1);
+    });
+    setFavorite(updatedFavorite);
   }
 
   return (
@@ -30,7 +49,7 @@ export default function Products() {
             <div
               className={`${
                 showDetails === item.id && "z-3"
-              } position-relative mx-2 my-3 bg-white product-wrapper`}
+              } position-relative mx-2 my-3 bg-white`}
               key={item.id}
             >
               <div
@@ -87,18 +106,63 @@ export default function Products() {
                     </div>
                     <div className="d-flex justify-content-between py-3">
                       {item.isFavorite ? (
-                        <IoMdCheckmark className="product-option"
-                        onClick={() => addToFavorite(i)}
-                         />
+                        <IoMdCheckmark
+                          className="product-option"
+                          onClick={() => removeFromFavorite(item, i)}
+                        />
                       ) : (
-                      <IoMdHeartEmpty className="product-option"
-                      onClick={() => addToFavorite(i)}
-                       />
+                        <IoMdHeartEmpty
+                          className="product-option"
+                          onClick={() => addToFavorite(item, i)}
+                        />
                       )}
                       <div className="line bg-secondary"></div>
-                      <IoCartOutline className="product-option" />
+                      <IoCartOutline
+                        className="product-option"
+                        onClick={() => setShowOptions(item.id)}
+                      />
                       <div className="line bg-secondary"></div>
                       <FiSearch className="product-option" />
+                    </div>
+                  </div>
+                )}
+                {showOptions === item.id && (
+                  <div className="product-detail p-2 top-0 start-0 position-absolute w-100 overflow-y-scroll">
+                    <div className="text-start">
+                      <div
+                        className="pointer close-btn"
+                        onClick={() => setShowOptions(false)}
+                      >
+                        <IoCloseOutline className="fs-5" />
+                        <span className="fw-bold">بستن</span>
+                      </div>
+                    </div>
+                    <div className="mb-3 mt-4">
+                      <span className="text-secondary fw-500">رنگ:</span>
+                      <div className="d-flex justify-content-center my-2">
+                        {item.color.map((color, i) => (
+                          <div
+                            key={i}
+                            onClick={() => setSelectedColor(color)}
+                            className="color rounded-circle pointer mx-2"
+                            style={{ backgroundColor: color.code }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <span className="fw-500 text-secondary">وزن:</span>
+                      <div className="d-flex justify-content-center pointer flex-wrap">
+                        {item.weight.map((weight, i) => (
+                          <div
+                            className="fw-500 m-2"
+                            key={i}
+                            onClick={() => setSelectedWeight(weight)}
+                          >
+                            {weight}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}

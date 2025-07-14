@@ -10,13 +10,17 @@ export default function Main() {
             <span>خانه / </span>
             <span className="fw-500">فروشگاه</span>
           </div>
-          <span className="text-secondary d-1025-block d-none">در حال نمایش ۶ نتیجه</span>
+          <span className="text-secondary d-1025-block d-none">
+            در حال نمایش ۶ نتیجه
+          </span>
         </div>
         <section>
-            <div className="d-flex justify-content-between py-3">
+          <div className="d-flex justify-content-between py-3">
+            <section className="filter-section d-none d-1025-block w-25 bg-white text-secondary px-2 border-radius-16 box-shadow">
               <FilterSection />
-              <ProductsSection />
-            </div>
+            </section>
+            <ProductsSection />
+          </div>
         </section>
       </div>
     </main>

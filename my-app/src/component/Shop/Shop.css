@@ -88,7 +88,7 @@
 }
 
 .pointer {
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 .h-full {
@@ -247,7 +247,8 @@ nav .social-media {
     background-color: #f7f7f7;
 }
 
-.searchbox-menu .searched-product-img {
+.searchbox-menu .searched-product-img,
+.cart-img {
     width: 65px;
 }
 
@@ -352,7 +353,8 @@ main {
 
 .filter:hover .color::after,
 .filter:hover .weight::after,
-.color:hover::after {
+.color:hover::after,
+.selected::after {
     content: '';
     width: 100%;
     height: 2px;
@@ -470,6 +472,17 @@ main {
     color: #767676;
 }
 
+.disabled {
+    cursor: auto !important;
+}
+
+.product-detail .close-btn {
+    position: fixed;
+    top: 4%;
+    left: 7%;
+    z-index: 5;
+}
+
 .comparison {
     padding-block: .75rem;
     bottom: 28%;
@@ -479,6 +492,7 @@ main {
     background-color: rgba(255, 255, 255, .9);
     height: 200px;
     font-size: 15px;
+    border-radius: 12px;
 }
 
 .product .color {
@@ -607,4 +621,22 @@ main {
 .return-btn {
     font-size: 12px;
     padding: 6px 14px 8px 14px;
+}
+
+.cart-product:hover {
+    background-color: #f7f7f7;
+    color: #8e8e8e;
+}
+
+.cart-footer,
+.sidemenu-header {
+    width: 29%;
+}
+
+.sidemenu-container {
+    margin-top: 5rem;
+}
+
+.cart .sidemenu-container {
+    height: 360px;
 }

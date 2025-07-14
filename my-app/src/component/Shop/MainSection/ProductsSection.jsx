@@ -1,8 +1,9 @@
 import { FaAngleDown, FaBars } from "react-icons/fa6";
 import { TbGridDots, TbLayoutGrid } from "react-icons/tb";
 import { persianNumber } from "../utils/utils";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Products from "./Products";
+import { SideMenuContext } from "../contexts/SideMenuContext";
 
 export function ProductsSection() {
   const [showItemsCount, setShowItemsCount] = useState([
@@ -21,7 +22,9 @@ export function ProductsSection() {
     { title: "مرتب‌سازی گرانترین", isActive: false },
   ]);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const { setContent, setIsOpen } = useContext(SideMenuContext)
 
   function showItemsCountHandler(i) {
     const changedCount = [...showItemsCount];
@@ -39,7 +42,12 @@ export function ProductsSection() {
     })
     changedOrdering[i].isActive = true;
     setOrdering(changedOrdering);
-    setIsOpen(false);
+    setOpenMenu(false);
+  }
+
+  function openFilter() {
+    setContent("filter");
+    setIsOpen(true);
   }
 
   return (
@@ -66,7 +74,7 @@ export function ProductsSection() {
           <TbLayoutGrid className="grid-icon ms-1 pointer" />
           <TbGridDots className="grid-icon ms-1 pointer" />
         </div>
-        <div className="pointer d-1025-none ms-auto">
+        <div className="pointer d-1025-none ms-auto" onClick={openFilter}>
           <FaBars className="ms-2" />
           <span className="fw-500">فیلتر محصولات</span>
         </div>
@@ -74,7 +82,7 @@ export function ProductsSection() {
           <div
             className="ordering pointer px-1 py-2 d-flex align-items-center justify-content-between"
             tabIndex="0"
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={() => setOpenMenu((prev) => !prev)}
           >
             <span className="fw-500">
               {ordering.map((item) => {
@@ -83,7 +91,7 @@ export function ProductsSection() {
             </span>
             <FaAngleDown className="ordering-icon" />
           </div>
-          {isOpen && (
+          {openMenu && (
             <div className="position-absolute end-0 start-0 z-2 bg-white">
               <ul className="m-0 p-0 ordering-list">
                 {ordering.map((item, i) => (

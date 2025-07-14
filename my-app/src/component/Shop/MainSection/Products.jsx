@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { persianNumber } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { FaEllipsis, FaRegStar, FaStar } from "react-icons/fa6";
@@ -6,8 +6,11 @@ import { IoMdCheckmark, IoMdHeartEmpty } from "react-icons/io";
 import { IoCartOutline, IoCloseOutline, IoShuffle } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import { ProductsContext } from "../contexts/ProductsContext";
+import { CartContext } from "../contexts/CartContext";
+import { SideMenuContext } from "../contexts/SideMenuContext";
 
 export default function Products() {
+
   const { products, setProducts, favorite, setFavorite } =
     useContext(ProductsContext);
 
@@ -20,6 +23,14 @@ export default function Products() {
   const [selectedColor, setSelectedColor] = useState("");
 
   const [selectedWeight, setSelectedWeight] = useState("");
+
+  const { cart, setCart } = useContext(CartContext);
+
+  const { setContent, setIsOpen } = useContext(SideMenuContext);
+
+  useEffect(() => {
+    reset()
+  }, [showOptions])
 
   function addToFavorite(item, i) {
     const updatedProducts = [...products];
@@ -39,6 +50,37 @@ export default function Products() {
       favItem.id === item.id && updatedFavorite.splice(i, 1);
     });
     setFavorite(updatedFavorite);
+  }
+
+  function reset() {
+    setSelectedColor("");
+    setSelectedWeight("");
+  }
+
+  function addToCart(product) {
+    if (selectedColor === "" || selectedWeight === "") {
+      alert(
+        "لطفا برخی از گزینه‌های محصول را قبل از اضافه کردن آن به سبد خرید، انتخاب کنید"
+      );
+    } else {
+      const updatedCart = [...cart];
+      const cartItemIndex = updatedCart.findIndex(
+        (item) =>
+          item.id === product.id &&
+          item.color === selectedColor &&
+          item.weight === selectedWeight
+      );
+      console.log(cartItemIndex);
+      if (cartItemIndex !== -1) {
+        updatedCart[cartItemIndex].quantity +=1;
+        setCart(updatedCart)
+      } else {
+        setCart((prev) => ([...prev, {...product, quantity: 1, color: selectedColor, weight: selectedWeight}]))
+      }
+      setShowOptions(null)
+      setContent("cart");
+      setIsOpen(true);
+    }
   }
 
   return (
@@ -118,7 +160,7 @@ export default function Products() {
                       )}
                       <div className="line bg-secondary"></div>
                       <IoCartOutline
-                        className="product-option"
+                        className={`product-option ${showOptions === item.id && "disabled text-secondary"}`}
                         onClick={() => setShowOptions(item.id)}
                       />
                       <div className="line bg-secondary"></div>
@@ -143,8 +185,10 @@ export default function Products() {
                         {item.color.map((color, i) => (
                           <div
                             key={i}
-                            onClick={() => setSelectedColor(color)}
-                            className="color rounded-circle pointer mx-2"
+                            onClick={() => setSelectedColor(color.name)}
+                            className={`${
+                              selectedColor === color.name && "selected"
+                            } color rounded-circle pointer mx-2`}
                             style={{ backgroundColor: color.code }}
                           ></div>
                         ))}
@@ -155,7 +199,9 @@ export default function Products() {
                       <div className="d-flex justify-content-center pointer flex-wrap">
                         {item.weight.map((weight, i) => (
                           <div
-                            className="fw-500 m-2"
+                            className={`weight ${
+                              selectedWeight === weight && "selected"
+                            } fw-500 m-2`}
                             key={i}
                             onClick={() => setSelectedWeight(weight)}
                           >
@@ -163,6 +209,25 @@ export default function Products() {
                           </div>
                         ))}
                       </div>
+                    </div>
+                    {selectedColor !== "" && selectedWeight !== "" && (
+                      <div>
+                        <div className="pointer text-secondary" onClick={reset}>
+                          <IoCloseOutline />
+                          <span>پاک کردن</span>
+                        </div>
+                        <div className="fw-500 my-2">
+                          <span>۳</span>
+                          <IoMdCheckmark className="fs-5 text-orange ms-2" />
+                          <span>عدد در انبار</span>
+                        </div>
+                      </div>
+                    )}
+                    <div
+                      className="pointer bg-orange text-white py-2 mt-2"
+                      onClick={() => addToCart(item)}
+                    >
+                      <span>افزودن به سبد خرید</span>
                     </div>
                   </div>
                 )}

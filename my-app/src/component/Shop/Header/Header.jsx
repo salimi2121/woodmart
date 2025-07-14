@@ -9,9 +9,13 @@ import SearchPage from "./SearchPage";
 import { ProductsContext } from "../contexts/ProductsContext";
 import { FaBars } from "react-icons/fa6";
 import SideMenu from '../SideMenu/SideMenu';
+import { CartContext } from "../contexts/CartContext";
 
 export default function Header() {
+
   const { setIsOpen, setContent } = useContext(SideMenuContext);
+
+  const { total, cartCount } = useContext(CartContext);
 
   const [openSearch, setOpenSearch] = useState(false);
 
@@ -103,10 +107,10 @@ export default function Header() {
             <div className="position-relative ms-3">
               <CiShoppingCart className="header-icon ms-2 mt-1 fs-4" />
               <span className="px-1 count position-absolute top-0 start-0 rounded-circle bg-orange text-white">
-                0
+                {cartCount}
               </span>
             </div>
-            <span className="d-none d-1025-block">0 تومان</span>
+            <span className="d-none d-1025-block">{total} تومان</span>
           </div>
         </div>
         <hr className="mt-1 mb-0" />

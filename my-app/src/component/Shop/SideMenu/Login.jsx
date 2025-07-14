@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <div className="login">
       <SideMenuHeader title="ورود" />
-      <div className="p-3 border-bottom border-1">
+      <div className="p-3 border-bottom border-1 sidemenu-container">
         <form action="">
           <label htmlFor="username" className="required my-2 fw-500">نام کاربری یا آدرس ایمیل</label>
           <input type="text" id="username" className="form-control rounded-5 border-2" required />

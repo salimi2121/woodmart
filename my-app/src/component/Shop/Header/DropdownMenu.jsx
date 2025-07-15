@@ -1,57 +1,55 @@
-import {
-  FaAngleDown,
-  FaAngleUp,
-  FaBars,
-} from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp, FaBars } from "react-icons/fa6";
 import { useState } from "react";
 import { category } from "../constants";
 
 export default function DropdownMenu() {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div
-      className="h-100 position-relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <div className="category-menu pointer px-3 py-3 bg-orange text-white d-flex justify-content-center align-items-center">
-        <FaBars className="ms-2" />
-        <span>دسته بندی محصولات</span>
-        <FaAngleDown className="me-auto" />
-      </div>
-      {isOpen && (
-        <div className="position-absolute w-100 z-2 bg-white">
-          <ul className="px-0 my-0">
-            {category.slice(0, 5).map((item, i) => (
-              <li
-                key={i}
-                className="category-item fw-bold border-bottom px-4 py-2"
-              >
-                {item}
-              </li>
-            ))}
-            {showMore &&
-              category.slice(5).map((item, i) => (
+    <div>
+      <div
+        className="h-100 position-relative z-3"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
+        <div className="category-menu pointer px-3 py-3 bg-orange text-white d-flex justify-content-center align-items-center">
+          <FaBars className="ms-2" />
+          <span>دسته بندی محصولات</span>
+          <FaAngleDown className="me-auto" />
+        </div>
+        {isOpen && (
+          <div className="position-absolute w-100 z-2 bg-white">
+            <ul className="px-0 my-0">
+              {category.slice(0, 5).map((item, i) => (
                 <li
                   key={i}
-                  className="category-item fw-bold border-bottom px-3 py-2"
+                  className="category-item fw-bold border-bottom px-4 py-2 pointer"
                 >
                   {item}
                 </li>
               ))}
-            <button
-              className="showmore-btn border-0 w-100 py-2"
-              onClick={() => setShowMore((prev) => !prev)}
-            >
-              {showMore ? <FaAngleUp /> : <FaAngleDown />}
-            </button>
-          </ul>
-        </div>
-      )}
+              {showMore &&
+                category.slice(5).map((item, i) => (
+                  <li
+                    key={i}
+                    className="category-item fw-bold border-bottom px-3 py-2 pointer"
+                  >
+                    {item}
+                  </li>
+                ))}
+              <button
+                className="showmore-btn border-0 w-100 py-2"
+                onClick={() => setShowMore((prev) => !prev)}
+              >
+                {showMore ? <FaAngleUp /> : <FaAngleDown />}
+              </button>
+            </ul>
+          </div>
+        )}
+      </div>
+      {isOpen && (<div className="dropdown-overlay"></div>)}
     </div>
   );
 }

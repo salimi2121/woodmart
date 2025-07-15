@@ -19,7 +19,7 @@ export default function Cart() {
     <div className="cart">
       <SideMenuHeader title="سبد خرید" />
       {cart.length === 0 ? (
-        <div className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column align-items-center sidemenu-container">
           <div className="d-flex flex-column align-items-center mb-3 mt-4">
             <MdOutlineRemoveShoppingCart className="empty-cart-icon mb-2" />
             <span className="fw-bold">هیچ محصولی در سبد خرید نیست.</span>

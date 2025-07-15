@@ -5,7 +5,7 @@ import SocialMedia from "../SocialMedia";
 export default function Navbar(props) {
 
   return (
-    <nav className="header-navbar z-1">
+    <nav className="header-navbar">
       <div className="mx-2 mx-xl-5 justify-content-between px-2 d-none d-1025-flex">
         <DropdownMenu />
         <ul className="align-self-end">

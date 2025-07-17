@@ -70,7 +70,6 @@ export default function Products() {
           item.color === selectedColor &&
           item.weight === selectedWeight
       );
-      console.log(cartItemIndex);
       if (cartItemIndex !== -1) {
         updatedCart[cartItemIndex].quantity +=1;
         setCart(updatedCart)

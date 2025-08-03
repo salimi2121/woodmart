@@ -8,7 +8,7 @@ import OffPetSection from "./OffPetSection/OffPetSection";
 import ProductBrandSection from "./ProductBrandSection";
 import AboutPetShopSection from "./AboutPetShopSection";
 import ProductCategorySection from "./ProductCategorySection";
-import BestSellingProductsSection from "./BestSellingProductsSection";
+import BestSellingProductsSection from "./BestSellingProduct/BestSellingProductsSection";
 import  ProductProvider  from "../../../ProductContext";
 import WoodmartAppSection from "./WoodmartAppSection";
 import BlogContentSection from "./BlogContentSection";

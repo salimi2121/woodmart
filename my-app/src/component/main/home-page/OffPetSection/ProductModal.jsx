@@ -28,7 +28,7 @@ export default function ProductModal({ onClose }) {
     <div
       className="position-absolute bg-white rounded-4 overflow-hidden overflow-y-auto pt-2 "
       style={{
-        opacity: '0.9',
+        opacity: '0.94',
         width: '200px',
         height: 'auto',
         maxHeight: '200px',

@@ -172,10 +172,10 @@ export default function BlogContentSection() {
                                                     <div className="" data-tooltip-id="product-actions-tooltip"
                                                         data-tooltip-content="افزودن به علاقه‌مندی‌">
                                                         <a href="" className="">
-                                                            <svg version="1.1" id="Layer_1" width="17px" height="17px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000" transform="matrix(1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
-                                                                    <circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="51"
-                                                                        cy="13" r="12"></circle> <circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="11" cy="42" r="10"></circle> <circle fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" cx="48" cy="55" r="8"></circle> <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="40" y1="54" x2="20" y2="46"></line> <line fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="19" y1="35" x2="41" y2="21"></line> </g></svg>
+                                                            <svg version="1.1" id="Layer_1" width="17px" height="17px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve" fill="#000000" transform="matrix(1, 0, 0, -1, 0, 0)"><g id="SVGRepo_bgCarrier" ></g><g id="SVGRepo_tracerCarrier" 
+                                                                ></g><g id="SVGRepo_iconCarrier">
+                                                                    <circle fill="none" stroke="#000000" cx="51"
+                                                                        cy="13" r="12"></circle> <circle fill="none" stroke="#000000" cx="11" cy="42" r="10"></circle> <circle fill="none" stroke="#000000" cx="48" cy="55" r="8"></circle> <line fill="none" stroke="#000000" x1="40" y1="54" x2="20" y2="46"></line> <line fill="none" stroke="#000000" x1="19" y1="35" x2="41" y2="21"></line> </g></svg>
 
                                                         </a>
                                                     </div><Tooltip

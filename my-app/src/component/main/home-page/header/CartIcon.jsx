@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
-
 import { RiShoppingCartLine } from "react-icons/ri";
 
 function CartIcon({ count = 0 }) {
@@ -44,7 +43,7 @@ function CartIcon({ count = 0 }) {
               height="69"
               stroke="#ededed"
             >
-              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g id="SVGRepo_bgCarrier" ></g>
               <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
               <g id="SVGRepo_iconCarrier">
                 <defs>

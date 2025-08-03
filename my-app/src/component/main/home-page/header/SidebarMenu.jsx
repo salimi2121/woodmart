@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseSharp } from "react-icons/io5";
-import { CiSearch } from "react-icons/ci";
 import ProductSearchBox from './ProductSearchBox';
 
 const SidebarMenu = () => {

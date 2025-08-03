@@ -3,25 +3,29 @@ import React, { useState, useEffect, useRef } from 'react';
 const FadeInRight = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
   const divRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    observerRef.current = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(divRef.current);
+          observerRef.current?.unobserve(entry.target);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (divRef.current) {
-      observer.observe(divRef.current);
+    const currentRef = divRef.current;
+    const observer = observerRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (divRef.current) {
-        observer.unobserve(divRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

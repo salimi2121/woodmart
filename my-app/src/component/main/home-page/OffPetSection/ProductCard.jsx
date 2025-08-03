@@ -3,6 +3,10 @@ import { IoIosStarOutline } from "react-icons/io";
 import { IoMdHeartEmpty, IoMdCheckmark } from "react-icons/io";
 import { TfiShoppingCart } from "react-icons/tfi";
 import ProductModal from './ProductModal';
+import { IoSearchOutline } from "react-icons/io5";
+import { MdOutlineCompareArrows } from "react-icons/md";
+import { Tooltip } from 'react-tooltip';
+
 
 export default function ProductCard({ 
   product, 
@@ -49,6 +53,30 @@ export default function ProductCard({
           <TfiShoppingCart size={21} />
         </div>
       </button>
+        <div className="off-buttons d-flex flex-column gap-2 position-absolute text-black fs-4 p-3 py-2 opacity-0 rounded-3 bg-white">
+        <div className="user-select-all"
+          data-tooltip-id="product-actions-tooltip"
+          data-tooltip-content="افزودن برای مقایسه">
+          <MdOutlineCompareArrows />
+        </div>
+        <div className=""
+          data-tooltip-id="product-actions-tooltip"
+          data-tooltip-content="جستجوی سریع">
+          <IoSearchOutline />
+        </div>
+        <div className="" data-tooltip-id="product-actions-tooltip"
+          data-tooltip-content="افزودن به علاقه‌مندی‌">
+          <IoMdHeartEmpty />
+        </div>
+      </div>
+      <Tooltip
+        id="product-actions-tooltip"
+        place="right"
+        effect="solid"
+        className="z-1050 bg-black rounded-3 d-flex justify-content-center align-items-center"
+        delayShow={300}
+        delayHide={200}
+      />
 
       {/* مودال */}
       {showModal && (

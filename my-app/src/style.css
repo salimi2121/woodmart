@@ -152,6 +152,45 @@ input {
 
 .shop-button {
     margin: 30px ;
+    
+}
+/* .shop-bt-right {
+    border-top-right-radius: 50px ;
+   
+}
+
+.shop-bt-left {
+    border-bottom-left-radius: 50px ;
+} */
+
+/* .btn-cart {
+    border: 2px solid gray;
+    border-radius: 50px ;
+    margin: 5px ;
+   
+} */
+
+.shop-bt {
+    border: 2px solid gray;
+   
+}
+.shop-bt:hover {
+    background-color: #ED8A34;
+}
+
+.shop-span {
+    border: 2px solid gray;
+    padding: 5px ;
+}
+
+.fa {
+    margin: 5px;
+    background-color: #c5c3c3;
+    padding: 5px ;
+    border-radius: 100px ;
+}
+.fa:hover {
+    background-color: #DD9933;
 }
 
 .kilogram {

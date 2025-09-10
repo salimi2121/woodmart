@@ -4,7 +4,7 @@ import ProductDescription from './ProductDescription';
 import ProductInfoBox from './ProductInfoBox';
 // import ProductPurchase from './ProductPurchase';
 import ProductReview from './ProductReview';
-import CartCounter from './CartCounter';
+import CartCounter from '../CartCounter';
 
 // import Footer from './Footer';
 
